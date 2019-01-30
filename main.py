@@ -7,7 +7,7 @@ print("Willkommen bei SToftware0 by bschwering & ftuente")
 
 
 def main():
-    print("Bitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
+    print("\n\nBitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
     keyinput = input()
 
     derivative.hook(keyinput)
