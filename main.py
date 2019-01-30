@@ -15,6 +15,7 @@ def main():
     integral.hook(keyinput)
     eastereggs.hook(keyinput)
 
-    main()
+    if "exit" not in keyinput:
+        main()
 
 main()
