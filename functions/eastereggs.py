@@ -7,6 +7,7 @@ def hook(keyinput):
 def getComponents(keyinput):
 
     out = "Ich komm immer klar auf n Chicago!"
+    output(out)
         
 #Berechnung der Werte
 
