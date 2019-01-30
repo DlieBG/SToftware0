@@ -1,0 +1,18 @@
+from sympy import *
+
+def hook(keyinput):
+    #if abfrage der Keywords
+        getComponents(keyinput)
+
+def getComponents(keyinput):
+
+    #Variablen
+
+    #Abrfrage und Speicherung der Variablen
+    
+    #Ausführung der Rechnung, bzw. Fehlermeldung
+        
+#Berechnung der Werte
+
+def output():
+    #Ausgabe der Werte

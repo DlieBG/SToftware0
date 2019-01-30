@@ -1,5 +1,6 @@
 from functions import derivative
 from functions import integral
+from functions import eastereggs
 from sympy import symbols
 import os
 
@@ -12,6 +13,8 @@ def main():
 
     derivative.hook(keyinput)
     integral.hook(keyinput)
+    eastereggs.hook(keyinput)
+
     main()
 
 main()
