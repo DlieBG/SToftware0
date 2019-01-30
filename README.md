@@ -5,5 +5,5 @@ Prinzipiell mit Python oder C#
 
 You need the following Python-Components to run the Program:<br>
 <li>
-<ul>python3
+<ul>python3</ul>
 </li>
