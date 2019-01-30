@@ -6,5 +6,5 @@ Prinzipiell mit Python oder C#
 You need the following Python-Components to run the Program:<br>
 <ul>
 <li>Python 3.7.2</li>
-<li>sympy</li>
+<li>sympy 1.3</li>
 </ul>
