@@ -7,10 +7,10 @@ def hook(keyinput):
     return ""
 
 def getComponents(keyinput):
-    simple(parse_expr(keyinput))
+    simple(keyinput)
         
 def simple(term):
-    out = sympify(term)
+    out = sympify(parse_expr(term))
     return output(out)
 
 def output(out):
