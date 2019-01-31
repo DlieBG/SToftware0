@@ -28,7 +28,7 @@ def extrems(term):
     x = symbols('x')
     init_printing(use_unicode=True)
     deriv = diff(term, x, 2)
-    out = solve(term, x)
+    out = solve(deriv, x)
     return output(out, term)
 
 def output(out, term):
