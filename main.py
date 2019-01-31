@@ -5,6 +5,7 @@ from functions import eastereggs
 from functions import derivative
 from functions import integral
 from functions import root
+from functions import solve
 
 print("Willkommen bei SToftware0 by bschwering & ftuente")
 
@@ -17,6 +18,7 @@ def main():
     derivative.hook(keyinput)
     integral.hook(keyinput)
     root.hook(keyinput)
+    solve.hook(keyinput)
 
     if "exit" not in keyinput:
         main()

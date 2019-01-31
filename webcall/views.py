@@ -4,6 +4,7 @@ from functions import eastereggs
 from functions import derivative
 from functions import integral
 from functions import root
+from functions import solve
 
 def index(request):
     webinput = request.GET.get("q", "")
@@ -13,5 +14,6 @@ def index(request):
     html += derivative.hook(webinput)
     html += integral.hook(webinput)
     html += root.hook(webinput)
+    html += solve.hook(webinput)
 
     return HttpResponse(html)
