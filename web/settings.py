@@ -25,7 +25,7 @@ SECRET_KEY = 'g1wt*#$j+otj@%(gu86^slktc%)p6_)r+0ogd-!*c=6^afao3p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['benedikt-schwering.de', '127.0.0.1', '192.168.0.97']
+ALLOWED_HOSTS = ['benedikt-schwering.de', '127.0.0.1', 'localhost']
 
 
 # Application definition
