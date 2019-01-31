@@ -12,12 +12,12 @@ def index(request):
     webinput = request.POST.get("ST0q", "")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
+    html += simple.hook(webinput)
     html += eastereggs.hook(webinput)
     html += derivative.hook(webinput)
     html += integral.hook(webinput)
     html += root.hook(webinput)
     html += solve.hook(webinput)
     html += extrems.hook(webinput)
-    html += simple.hook(webinput)
 
     return HttpResponse(html)

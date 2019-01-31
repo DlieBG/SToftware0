@@ -16,13 +16,13 @@ def main():
     print("\n\nBitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
     keyinput = input()
 
+    simple.hook(keyinput)
     eastereggs.hook(keyinput)
     derivative.hook(keyinput)
     integral.hook(keyinput)
     root.hook(keyinput)
     solve.hook(keyinput)
     extrems.hook(keyinput)
-    simple.hook(keyinput)
 
     if "exit" not in keyinput:
         main()
