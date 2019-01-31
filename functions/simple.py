@@ -8,22 +8,46 @@ def hook(keyinput):
 
 def getComponents(keyinput):
 
-    term = ""
+    if "=" not in keyinput:
+        term = ""
+        
+        parts = keyinput.split(' ')
+        for part in parts:
+            if "x" in part:
+                term = part
+                term = term.replace("y=", "")
+                term = term.replace("f(x)=", "")
 
-    parts = keyinput.split(' ')
-    for part in parts:
-        if "x" in part:
-            term = part
-            term = term.replace("y=", "")
-            term = term.replace("f(x)=", "")
-
-    if term is not "":
-        return simple(term)
+        if term is not "":
+            return simple(term)
+        else:
+            return("Ihre Eingabe konnte nicht richtig erkannt werden!")
     else:
-        return("Ihre Eingabe konnte nicht richtig erkannt werden!")
+        term = ""
+        left = ""
+        right = ""
+    
+        parts = keyinput.split(' ')
+        for part in parts:
+            if "=" in part:
+                term = part
+                left = part.split("=")[0]
+                right = part.split("=")[1]
+    
+        if term is not "" and left is not "" and right is not "":
+            return simpleEq(left,right)
+        else:
+            print("Fehler")
+            return "Fehler"
         
 def simple(term):
     out = sympify(parse_expr(term))
+    return output(out)
+    
+def simpleEq(left,right):
+    out = str(sympify(parse_expr(left)))
+    out+=str("=")
+    out+=str(sympify(parse_expr(right)))
     return output(out)
 
 def output(out):
