@@ -49,11 +49,14 @@ def simple(term):
     return output(out)
     
 def simpleEq(left,right):
-    out = str(latex(sympify(parse_expr(left))))
-    out += str("=")
-    out += str(latex(sympify(parse_expr(right))))
-    return output(out)
+    left = sympify(parse_expr(left))
+    right = sympify(parse_expr(right))
+    return output2(left,right)
 
 def output(out):
     print(str(out))
     return "\nEingabe: $$"+str(latex(out))+"$$"
+    
+def output2(left,right):
+    print(str(left)+"="+str(right))
+    return "\nEingabe: $$"+str(latex(left))+"="+str(latex(right))+"$$"
