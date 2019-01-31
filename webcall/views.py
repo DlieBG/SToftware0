@@ -9,7 +9,7 @@ from functions import extrems
 from functions import simple
 
 def index(request):
-    webinput = request.POST.get("q", "")
+    webinput = request.POST.get("ST0q", "")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
     html += eastereggs.hook(webinput)
