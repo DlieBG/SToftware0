@@ -41,4 +41,4 @@ def output(out, term, a, b):
         return "\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c"
     else:
         print("\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out))
-        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out)
+        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n$$"+str(out)+"$$"

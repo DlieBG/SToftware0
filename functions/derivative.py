@@ -32,4 +32,4 @@ def derivative(term, level):
 
 def output(out, term, level):
     print("\nDie "+str(level)+". Ableitung von "+term+" ist: \n"+str(out))
-    return "\nDie "+str(level)+". Ableitung von "+term+" ist: \n"+str(out)
+    return "\nDie "+str(level)+". Ableitung von "+term+" ist: \n$$"+str(out)+"$$"
