@@ -14,12 +14,12 @@ def index(request):
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
     html += simple.hook(webinput)
+    html += discussion.hook(webinput)
     html += eastereggs.hook(webinput)
     html += derivative.hook(webinput)
     html += integral.hook(webinput)
     html += root.hook(webinput)
     html += solve.hook(webinput)
     html += extrems.hook(webinput)
-    html += discussion.hook(webinput)
 
     return HttpResponse(html)

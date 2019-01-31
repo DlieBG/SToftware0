@@ -18,13 +18,13 @@ def main():
     keyinput = input()
 
     simple.hook(keyinput)
+    discussion.hook(keyinput)
     eastereggs.hook(keyinput)
     derivative.hook(keyinput)
     integral.hook(keyinput)
     root.hook(keyinput)
     solve.hook(keyinput)
     extrems.hook(keyinput)
-    discussion.hook(keyinput)
 
     if "exit" not in keyinput:
         main()
