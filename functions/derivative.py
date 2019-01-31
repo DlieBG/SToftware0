@@ -28,9 +28,9 @@ def getComponents(keyinput):
 def derivative(term, level):
     x = symbols('x')
     init_printing(use_unicode=True)
-    out = latex(diff(term, x, level))
+    out = diff(term, x, level)
     return output(out, term, int(level))
 
 def output(out, term, level):
     print("\nDie "+str(level)+". Ableitung von "+term+" ist: \n"+str(out))
-    return "\nDie "+str(level)+". Ableitung von "+term+" ist: $$"+str(out)+"$$"
+    return "\nDie "+str(level)+". Ableitung von "+term+" ist: $$"+latex(str(out))+"$$"
