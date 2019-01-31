@@ -19,6 +19,8 @@ def getComponents(keyinput):
 
     if term is not "":
         return simple(term)
+    else:
+        return("Ihre Eingabe konnte nicht richtig erkannt werden!")
         
 def simple(term):
     out = sympify(parse_expr(term))
