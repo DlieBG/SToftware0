@@ -6,6 +6,7 @@ from functions import derivative
 from functions import integral
 from functions import root
 from functions import solve
+from functions import extrems
 
 print("Willkommen bei SToftware0 by bschwering & ftuente")
 
@@ -19,6 +20,7 @@ def main():
     integral.hook(keyinput)
     root.hook(keyinput)
     solve.hook(keyinput)
+    extrems.hook(keyinput)
 
     if "exit" not in keyinput:
         main()

@@ -5,6 +5,7 @@ from functions import derivative
 from functions import integral
 from functions import root
 from functions import solve
+from functions import extrems
 
 def index(request):
     webinput = request.GET.get("q", "")
@@ -15,5 +16,6 @@ def index(request):
     html += integral.hook(webinput)
     html += root.hook(webinput)
     html += solve.hook(webinput)
+    html += extrems.hook(webinput)
 
     return HttpResponse(html)

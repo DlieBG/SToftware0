@@ -2,7 +2,7 @@ from sympy import *
 
 def hook(keyinput):
     #Keywords definieren
-    if "extremstellen" in keyinput.lower() or "extrempunkte" in keyinput.lower() or "maxima" in keyinput.lower() or "minima" in keyinput.lower() or
+    if "extremstellen" in keyinput.lower() or "extrempunkte" in keyinput.lower() or "maxima" in keyinput.lower() or "minima" in keyinput.lower():
         return getComponents(keyinput)
     return ""
 
