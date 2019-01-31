@@ -8,7 +8,7 @@ from functions import solve
 from functions import extrems
 
 def index(request):
-    webinput = request.GET.get("q", "")
+    webinput = request.POST.get("q", "")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
     html += eastereggs.hook(webinput)
