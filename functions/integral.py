@@ -31,15 +31,15 @@ def integral(term, a, b):
     x = symbols('x')
     init_printing(use_unicode=True)
     if a is "" or b is "":
-        out = latex(integrate(term, x))
+        out = integrate(term, x)
     else:
-        out = latex(integrate(term, (x, a, b)))
+        out = integrate(term, (x, a, b))
     return output(out, term, a, b)
 
 def output(out, term, a, b):
     if a is "" or b is "":
         print("\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c")
-        return "\nDie Stammfunktion von "+term+" ist: $$"+str(out)+"+c$$"
+        return "\nDie Stammfunktion von "+term+" ist: $$"+str(latex(out))+"+c$$"
     else:
         print("\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out))
-        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: $$"+str(out)+"$$"
+        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: $$"+str(latex(out))+"$$"

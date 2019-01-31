@@ -16,4 +16,4 @@ def simple(term):
 
 def output(out):
     print(str(out))
-    return "$$x="+str(latex(str(out)))+"$$"
+    return "$$x="+latex(str(out))+"$$"
