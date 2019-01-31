@@ -22,7 +22,7 @@ def getComponents(keyinput):
         
 def functionX():
     #Berechnung der 
-    return output(out, term, a, b)
+    return output(out, term)
 
-def output(out, term, a, b):
+def output(out, term):
     #Ausgabe der Werte
