@@ -1,8 +1,4 @@
 # SToftware0
-Sowas wie Mathematika<br>
-Prinzipiell mit Python oder C#
-<br><br>
-
 <p>
 You need the following Python-Components to run the Program:<br>
 <ul>
@@ -33,5 +29,6 @@ python3 main.py
 <br>
 <p>
 When you want to add a function you have to call the hook at main.py and at webcall/views.py
-<br>It´s important to return Strings!
+<br>It´s important to return Strings!<br>
+look at the vorlage [:):]
 </p>
