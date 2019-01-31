@@ -18,21 +18,44 @@
       <nav>
           <div class="nav-wrapper">
             <a href="#!" class="brand-logo">SToftware0</a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+            <ul class="right">
+              <li><a href="https://www.paypal.me/DlieBG"><i class="material-icons">euro_symbol</i></a></li>
+              <li><a href="wiki.html"><i class="material-icons">book</i></a></li>
             </ul>
           </div>
         </nav>
+        <p>
+            <div class="row">
+                <div class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" id="autocomplete-input" class="autocomplete">
+                      <label for="autocomplete-input">Autocomplete</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </p>
         
 
 
 
-
-
-      <script>
-      
-      </script>
-    <script type="text/javascript" src="js/materialize.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+       $('input.autocomplete').autocomplete({
+        data: {
+          "Apple": null,
+          "Microsoft": null,
+          "Google": 'https://placehold.it/250x250'
+        },
+        limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+        onAutocomplete: function(val) {
+          // Callback function when value is autcompleted.
+        },
+        minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+      });
+        
+      </script>
     </body>
   </html>
