@@ -1,18 +1,28 @@
 from sympy import *
 
 def hook(keyinput):
-    #if abfrage der Keywords
-        getComponents(keyinput)
+    #Keywords definieren
+    if "" in keyinput.lower()
+        return getComponents(keyinput)
+    return ""
 
 def getComponents(keyinput):
 
     #Variablen
 
-    #Abrfrage und Speicherung der Variablen
+    parts = keyinput.split(' ')
+    for part in parts:
+        #Teile den Variablen zuordnen
     
-    #Ausführung der Rechnung, bzw. Fehlermeldung
+    if  is not "": #Abbruchbedingung
+        return functionX()
+    else:
+        print("Fehler")
+        return "Fehler"
         
-#Berechnung der Werte
+def functionX():
+    #Berechnung der 
+    return output(out, term, a, b)
 
-def output():
+def output(out, term, a, b):
     #Ausgabe der Werte
