@@ -3,6 +3,7 @@ from sympy import *
 def hook(keyinput):
     if "stammfunktion" in keyinput.lower() or "integral" in keyinput.lower() or "aufleitung" in keyinput.lower() or "aufleiten" in keyinput.lower():
         return getComponents(keyinput)
+    return ""
 
 def getComponents(keyinput):
 
@@ -38,7 +39,7 @@ def integral(term, a, b):
 def output(out, term, a, b):
     if a is "" or b is "":
         print("\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c")
-        return "\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c"
+        return "\nDie Stammfunktion von "+term+" ist: $$"+str(out)+"+c$$"
     else:
         print("\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out))
-        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n$$"+str(out)+"$$"
+        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: $$"+str(out)+"$$"

@@ -3,6 +3,7 @@ from sympy import *
 def hook(keyinput):
     if "ableitung" in keyinput.lower() or "ableiten" in keyinput.lower():
         return getComponents(keyinput)
+    return ""
 
 def getComponents(keyinput):
 
@@ -32,4 +33,4 @@ def derivative(term, level):
 
 def output(out, term, level):
     print("\nDie "+str(level)+". Ableitung von "+term+" ist: \n"+str(out))
-    return "\nDie "+str(level)+". Ableitung von "+term+" ist: \n$$"+str(out)+"$$"
+    return "\nDie "+str(level)+". Ableitung von "+term+" ist: $$"+str(out)+"$$"
