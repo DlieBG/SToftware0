@@ -1,27 +1,30 @@
 from sympy import *
 
 def hook(keyinput):
-    #Keywords definieren
     if "extremstellen" in keyinput.lower() or "extrempunkte" in keyinput.lower() or "maxima" in keyinput.lower() or "minima" in keyinput.lower():
         return getComponents(keyinput)
     return ""
 
 def getComponents(keyinput):
 
-    #Variablen
+    term = ""
 
     parts = keyinput.split(' ')
     for part in parts:
-        #Teile den Variablen zuordnen
+        if "x" in part:
+            term = part
+            term = term.replace("y=", "")
+            term = term.replace("f(x)=", "")
     
-    if  is not "": #Abbruchbedingung
-        return functionX()
+    if term is not "":
+        return extrems(term)
     else:
         print("Fehler")
         return "Fehler"
         
-def functionX():
-    #Berechnung der 
+def extrems(term):
+    x = symbols('x')
+    init_printing(use_unicode=True)
     return output(out, term)
 
 def output(out, term):
