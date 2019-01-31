@@ -39,7 +39,7 @@ def integral(term, a, b):
 def output(out, term, a, b):
     if a is "" or b is "":
         print("\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c")
-        return "\nDie Stammfunktion von "+term+" ist: $$"+str(latex(out))+"+c$$"
+        return "\nStammfunktion: $$"+str(latex(out))+"+c$$"
     else:
         print("\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out))
-        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: $$"+str(latex(out))+"$$"
+        return "\nIntegral von "+a+" bis "+b+": $$"+str(latex(out))+"$$"

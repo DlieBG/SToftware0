@@ -26,4 +26,4 @@ def simple(term):
 
 def output(out):
     print(str(out))
-    return "Input: $$"+str(latex(out))+"$$"
+    return "\nEingabe: $$"+str(latex(out))+"$$"

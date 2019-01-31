@@ -31,4 +31,4 @@ def rootss(term):
 
 def output(out, term):
     print("Die Nullstellen von "+term+" sind: \nx="+str(out))
-    return "Die Nullstellen von "+term+" sind: $$x="+str(latex(out))+"$$"
+    return "\nNullstellen: $$x="+str(latex(out))+"$$"

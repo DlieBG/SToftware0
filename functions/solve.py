@@ -33,4 +33,4 @@ def solves(term, left, right):
 
 def output(out, term):
     print("Die Lösungsmenge des Terms "+term+" ist: \nx="+str(out))
-    return "Die Lösungsmenge des Terms "+term+" ist: $$x="+str(latex(out))+"$$"
+    return "\nLösungsmenge: $$x="+str(latex(out))+"$$"
