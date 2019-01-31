@@ -2,7 +2,7 @@ from sympy import *
 
 def hook(keyinput):
     if "stammfunktion" in keyinput.lower() or "integral" in keyinput.lower() or "aufleitung" in keyinput.lower() or "aufleiten" in keyinput.lower():
-        getComponents(keyinput)
+        return getComponents(keyinput)
 
 def getComponents(keyinput):
 
@@ -22,7 +22,7 @@ def getComponents(keyinput):
             b = part
     
     if term is not "":
-        integral(term, a, b)
+        return integral(term, a, b)
     else:
         print("Es konnte kein Term gefunden werden")
         
@@ -33,10 +33,12 @@ def integral(term, a, b):
         out = latex(integrate(term, x))
     else:
         out = latex(integrate(term, (x, a, b)))
-    output(out, term, a, b)
+    return output(out, term, a, b)
 
 def output(out, term, a, b):
     if a is "" or b is "":
-        print("\nDie Stammfunktion von "+term+" ist: \n"+str(out))
+        print("\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c")
+        return "\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c"
     else:
         print("\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out))
+        return "\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out)

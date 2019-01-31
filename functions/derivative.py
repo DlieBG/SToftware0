@@ -2,7 +2,7 @@ from sympy import *
 
 def hook(keyinput):
     if "ableitung" in keyinput.lower() or "ableiten" in keyinput.lower():
-        getComponents(keyinput)
+        return getComponents(keyinput)
 
 def getComponents(keyinput):
 
@@ -20,7 +20,7 @@ def getComponents(keyinput):
             level = level
     
     if term is not "":
-        derivative(term, level)
+        return derivative(term, level)
     else:
         print("Es konnte kein Term gefunden werden")
         
@@ -28,7 +28,8 @@ def derivative(term, level):
     x = symbols('x')
     init_printing(use_unicode=True)
     out = latex(diff(term, x, level))
-    output(out, term, int(level))
+    return output(out, term, int(level))
 
 def output(out, term, level):
     print("\nDie "+str(level)+". Ableitung von "+term+" ist: \n"+str(out))
+    return "\nDie "+str(level)+". Ableitung von "+term+" ist: \n"+str(out)
