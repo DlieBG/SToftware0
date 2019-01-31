@@ -6,7 +6,7 @@ from functions import integral
 
 def hook(keyinput):
     #Keywords definieren
-    if "kurvendiskussion" in keyinput.lower() or "diskussion" in keyinput.lower() or "discuss" in keyinput.lower():
+    if "kurvendiskussion" in keyinput.lower() or "diskussion" in keyinput.lower() or "diskutiere" in keyinput.lower() or "discuss" in keyinput.lower():
         return output(keyinput)
     return ""
 
