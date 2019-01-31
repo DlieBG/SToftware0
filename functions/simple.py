@@ -34,7 +34,7 @@ def getComponents(keyinput):
             if "=" in part:
                 term = part
                 if "=":
-                term = term.split("=")[1]
+                    term = term.split("=")[1]
                 left = part.split("=")[0]
                 right = part.split("=")[1]
     
