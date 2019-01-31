@@ -30,9 +30,9 @@ def integral(term, a, b):
     x = symbols('x')
     init_printing(use_unicode=True)
     if a is "" or b is "":
-        out = integrate(term, x)
+        out = latex(integrate(term, x))
     else:
-        out = integrate(term, (x, a, b))
+        out = latex(integrate(term, (x, a, b)))
     output(out, term, a, b)
 
 def output(out, term, a, b):
