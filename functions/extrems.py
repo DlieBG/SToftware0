@@ -13,7 +13,7 @@ def getComponents(keyinput):
     for part in parts:
         if "x" in part:
             term = part
-            if "=":
+            if "=" in term:
                 term = term.split("=")[1]
             term = term.replace("y=", "")
             term = term.replace("f(x)=", "")
