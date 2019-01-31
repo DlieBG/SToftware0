@@ -19,7 +19,7 @@ def getComponents(keyinput):
             left = part.split("=")[0]
             right = part.split("=")[1]
     
-    if term is not "":
+    if term is not "" and left is not "" and right is not "":
         return solves(term, left, right)
     else:
         print("Fehler")
