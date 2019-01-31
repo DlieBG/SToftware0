@@ -1,28 +1,20 @@
 from sympy import *
+from functions import root
+from functions import derivative
+from functions import extrems
+from functions import integral
 
 def hook(keyinput):
     #Keywords definieren
     if "kurvendiskussion" in keyinput.lower() or "diskussion" in keyinput.lower() or "discuss" in keyinput.lower():
-        return getComponents(keyinput)
+        return output(keyinput)
     return ""
 
-def getComponents(keyinput):
-
-    #Variablen
-
-    parts = keyinput.split(' ')
-    for part in parts:
-        #Teile den Variablen zuordnen
+def output(keyinput):
+    html = root.getComponents(keyinput)
+    html += derivative.getComponents(keyinput+" 1.")
+    html += derivative.getComponents(keyinput+" 2.")
+    html += extrems.getComponents(keyinput)
+    html += integral.getComponents(keyinput)
     
-    if  is not "": #Abbruchbedingung
-        return functionX()
-    else:
-        print("Fehler")
-        return "Fehler"
-        
-def functionX():
-    #Berechnung der 
-    return output(out, term)
-
-def output(out, term):
-    #Ausgabe der Werte
+    return html
