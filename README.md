@@ -8,6 +8,7 @@ You need the following Python-Components to run the Program:<br>
 <ul>
 <li>Python 3.7.2</li>
 <li>sympy 1.3</li>
+<li>Django 2.1.5</li>
 </ul>
 </p>
 
