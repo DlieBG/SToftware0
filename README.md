@@ -20,6 +20,12 @@ You need the following Packages under Linux:<br>
 </ul>
 </p>
 <p>
+For Server usage also<br>
+<ul>
+<li>Django:  pip3 install Django</li>
+</ul>
+</p>
+<p>
 To execute just enter ~/SToftware0/ and type:<br>
 python3 main.py
 </p>
