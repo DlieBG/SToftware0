@@ -9,8 +9,11 @@ def hook(keyinput):
         return "General Kenobi!"
     if "benedikt" in keyinput.lower():
         print("Benedikt Schwering\n")
-        return "Benedikt Schwering\nCEO von Schwering Software und SToftware\nLead Programmer von SToftware0\nTechnischer Informatiker\n"
+        return "Benedikt Schwering<br>CEO von Schwering Software und SToftware<br>Lead Programmer von SToftware0<br>Technischer Informatiker"
     if "florian" in keyinput.lower():
         print("Florian Tünte\n")
-        return "Florian T&uuml;nte\nCFO von SToftware\nProgrammer von SToftware0\nInformatiker\n"
+        return "Florian T&uuml;nte<br>CFO von SToftware<br>Programmer von SToftware0<br>Informatiker"
+    if "tarik" in keyinput.lower():
+        print("Tarik Krämer\n")
+        return "Tarik Kr&auml;mer<br>Designer bei SToftware"
     return ""
