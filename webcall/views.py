@@ -12,6 +12,7 @@ from functions import turns
 
 def index(request):
     webinput = request.POST.get("ST0q", "")
+    webinput = webinput.replace("^", "**")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
     html += simple.hook(webinput)
