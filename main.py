@@ -9,6 +9,7 @@ from functions import solve
 from functions import extrems
 from functions import simple
 from functions import discussion
+from functions import turns
 
 print("Willkommen bei SToftware0 by bschwering & ftuente")
 
@@ -25,6 +26,7 @@ def main():
     root.hook(keyinput)
     solve.hook(keyinput)
     extrems.hook(keyinput)
+    turns.hook(keyinput)
 
     if "exit" not in keyinput:
         main()
