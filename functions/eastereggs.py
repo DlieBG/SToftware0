@@ -7,6 +7,9 @@ def hook(keyinput):
     if "hello there" in keyinput.lower():
         print("General Kenobi!")
         return "<h3>General Kenobi!</h3>"
+    if "moped" in keyinput.lower():
+        print("SOOS!")
+        return "<h2>SOOS!</h2>"
     if "benedikt" in keyinput.lower():
         print("Benedikt Schwering\n")
         return "<h3>Benedikt Schwering<br>CEO von Schwering Software und SToftware<br>Lead Programmer von SToftware0<br>Technischer Informatiker</h3>"
