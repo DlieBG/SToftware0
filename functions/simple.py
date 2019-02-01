@@ -54,9 +54,9 @@ def simpleEq(left,right):
     return output2(left,right)
 
 def output(out):
-    print(str(out))
+    print("\n"+str(out))
     return "\nEingabe: $$"+str(latex(out))+"$$"
     
 def output2(left,right):
-    print(str(left)+"="+str(right))
+    print("\n"+str(left)+"="+str(right))
     return "\nEingabe: $$"+str(latex(left))+"="+str(latex(right))+"$$"
