@@ -2,7 +2,7 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
-    if ("x" in keyinput or "*" in keyinput or "+" in keyinput or "/" in keyinput or "-" in keyinput or len(keyinput.split(" ")) is 1) and "exit" not in keyinput.lower() and keyinput is not "":
+    if True or ("x" in keyinput or "*" in keyinput or "+" in keyinput or "/" in keyinput or "-" in keyinput or len(keyinput.split(" ")) is 1) and "exit" not in keyinput.lower() and keyinput is not "":
         return getComponents(keyinput)
     return ""
 
@@ -13,7 +13,7 @@ def getComponents(keyinput):
         
         parts = keyinput.split(' ')
         for part in parts:
-            if True or "*" in part or "+" in part or "/" in part or "-" in part or "sin" in part or "cos" in part or "tan" in part or "exp" in part or "sqrt" in part or "pi" in part or part is "x":
+            if "*" in part or "+" in part or "/" in part or "-" in part or "sin" in part or "cos" in part or "tan" in part or "exp" in part or "sqrt" in part or "pi" in part or part is "x":
                 term = part
                 if "=" in term:
                     term = term.split("=")[1]
