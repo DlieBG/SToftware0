@@ -13,7 +13,7 @@ def getComponents(keyinput):
         
         parts = keyinput.split(' ')
         for part in parts:
-            if "x" in part:
+            if "x" in part or "*" in part or "+" in part or "/" in part or "-" in part:
                 term = part
                 if "=" in term:
                     term = term.split("=")[1]
