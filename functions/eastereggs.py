@@ -2,8 +2,8 @@ from sympy import *
 
 def hook(keyinput):
     if "hilfe" in keyinput.lower() or keyinput is "":
-        print("\nGib eine Aufgabe ein!\n\nBeispiele:\n2. Ableitung von x**2\nGleichung lösen: x**3=21*x\nKurvendiskussion 2*x**3+x**2")
-        return "Gib eine Aufgabe ein!<br>Beispiele:<ul><li>2. Ableitung von x**2</li><li>Gleichung lösen: x**3=21*x</li><li>Kurvendiskussion 2*x**3+x**2</li></ul>"
+        print("\nGib eine Aufgabe ein!\n\nBeispiele:\n2. Ableitung von x^2\nGleichung lösen: x^3=21*x\nKurvendiskussion 2*x^3+x^2")
+        return "Gib eine Aufgabe ein!<br>Beispiele:<ul><li>2. Ableitung von x^2</li><li>Gleichung lösen: x^3=21*x</li><li>Kurvendiskussion 2*x^3+x**2</li></ul>"
     if "chicago" in keyinput.lower():
         print("Ich komm immer klar auf n Chicago!")
         return "<h3>Ich komm immer klar auf n Chicago!</h3>"
