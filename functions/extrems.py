@@ -32,5 +32,5 @@ def extrems(term):
     return output(out, term)
 
 def output(out, term):
-    print("Die Extremstellen von "+term+" sind: \nx="+str(out))
+    print("\nDie Extremstellen von "+term+" sind: \nx="+str(out))
     return "\nExtremstellen: $$x="+latex(str(out))+"$$"
