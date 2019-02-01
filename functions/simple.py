@@ -2,7 +2,7 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
-    if "x" in keyinput and "exit" not in keyinput.lower() and keyinput is not "":
+    if ("x" in keyinput or "*" in keyinput or "+" in keyinput or "/" in keyinput or "-" in keyinput) and "exit" not in keyinput.lower() and keyinput is not "":
         return getComponents(keyinput)
     return ""
 
