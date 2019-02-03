@@ -25,9 +25,9 @@ def main():
     derivative.hook(keyinput)
     integral.hook(keyinput)
     root.hook(keyinput)
-    solve.hook(keyinput)
     extrems.hook(keyinput)
     turns.hook(keyinput)
+    solve.hook(keyinput)
 
     if "exit" not in keyinput:
         main()

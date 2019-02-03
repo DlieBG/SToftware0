@@ -21,8 +21,8 @@ def index(request):
     html += derivative.hook(webinput)
     html += integral.hook(webinput)
     html += root.hook(webinput)
-    html += solve.hook(webinput)
     html += extrems.hook(webinput)
     html += turns.hook(webinput)
+    html += solve.hook(webinput)
 
     return HttpResponse(html)
