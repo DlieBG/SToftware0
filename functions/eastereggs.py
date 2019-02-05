@@ -19,7 +19,4 @@ def hook(keyinput):
     if "florian" in keyinput.lower():
         print("Florian Tünte\n")
         return "<h3>Florian T&uuml;nte<br>CFO von SToftware<br>Programmer von SToftware0<br>Informatiker</h3>"
-    if "tarik" in keyinput.lower():
-        print("Tarik Krämer\n")
-        return "Tarik Kr&auml;mer<br>Designer bei SToftware"
     return ""
