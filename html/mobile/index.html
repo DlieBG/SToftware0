@@ -27,15 +27,15 @@
           <div class="nav-wrapper">
             <a href="" class="brand-logo center">SToftware0</a>
             <ul class="right">
-              <li><a href="https://www.paypal.me/DlieBG"><i class="material-icons">euro_symbol</i></a></li>
-              <li><a href="wiki.html"><i class="material-icons">book</i></a></li>
+              <li><a href="https://www.paypal.me/DlieBG/5"><i class="material-icons">euro_symbol</i></a></li>
+              <li><a onclick="document.getElementById('input').value='hilfe';document.getElementById('form').submit()"><i class="material-icons">book</i></a></li>
             </ul>
           </div>
         </nav>
         <p>
           <div class="row">
             <div class="input-field col s12">
-              <form method="POST" action="http://benedikt-schwering.de:443/call/" autocomplete="off" target="iframe">
+              <form id="form" method="POST" action="http://benedikt-schwering.de:443/call/" autocomplete="off" target="iframe">
                   <!--<input value="" id="input" type="text" autocomplete="false" name="ST0q">-->
                   <input id="input" class="materialize-textarea" name="ST0q" rows="1"></input>
                   <label class="active" for="input">Eingabe</label>
@@ -47,7 +47,7 @@
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-        <iframe name="iframe" style="width:100vw; height: 55vh; border: none" src="http://benedikt-schwering.de:481/call/?ST0q="></iframe>
+        <iframe id="iframe" name="iframe" style="width:100vw; height: 55vh; border: none" src="http://benedikt-schwering.de:481/call/?ST0q="></iframe>
 
         <footer class="page-footer">
             <div class="container">
@@ -66,7 +66,7 @@
                 <div class="col l4 offset-l2 s12">
                   <h5 class="white-text">Links</h5>
                   <ul>
-                    <li><a class="grey-text text-lighten-3" href="functions.html">Funktionen</a></li>
+                    <li><a class="grey-text text-lighten-3" onclick="document.getElementById('input').value='hilfe';document.getElementById('form').submit()">Funktionen</a></li>
                     <li><a class="grey-text text-lighten-3" href="impressum.html">Impressum</a></li>
                   </ul>
                 </div>
