@@ -13,7 +13,7 @@ def hook(keyinput):
     if "moped" in keyinput.lower():
         print("SOOS!")
         return "<h2>SOOS!</h2>"
-    if "benedikt" in keyinput.lower() or "ceo" in keyinput.lower() or "programmier" in keyinput.lower() or "erfinder" in keyinput.lower():
+    if "benedikt" in keyinput.lower() or "ceo" in keyinput.lower() or "programmier" in keyinput.lower() or "erfinder" in keyinput.lower() "erfunden" in keyinput.lower() or "entwickelt" in keyinput.lower() or:
         print("Benedikt Schwering\n")
         return "<h3>Benedikt Schwering<br>CEO von Schwering Software und SToftware<br>Lead Programmer von SToftware0<br>Technischer Informatiker</h3>"
     if "florian" in keyinput.lower():
