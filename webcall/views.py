@@ -13,6 +13,7 @@ from functions import plot
 
 def index(request):
     webinput = request.POST.get("ST0q", "")
+    webinput = webinput.lower()
     webinput = webinput.replace("^", "**")
     webinput = webinput.replace("f(x)=", "")
     webinput = webinput.replace("y=", "")

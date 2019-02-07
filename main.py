@@ -17,6 +17,7 @@ print("Willkommen bei SToftware0 by bschwering & ftuente")
 def main():
     print("\n\nBitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
     keyinput = input()
+    keyinput = keyinput.lower()
     keyinput = keyinput.replace("^", "**")
     keyinput = keyinput.replace("f(x)=", "")
     keyinput = keyinput.replace("y=", "")
