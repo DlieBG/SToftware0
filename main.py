@@ -18,6 +18,8 @@ def main():
     print("\n\nBitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
     keyinput = input()
     keyinput = keyinput.replace("^", "**")
+    keyinput = keyinput.replace("f(x)=", "")
+    keyinput = keyinput.replace("y=", "")
 
     simple.hook(keyinput)
     discussion.hook(keyinput)

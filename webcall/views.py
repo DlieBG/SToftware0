@@ -14,6 +14,8 @@ from functions import plot
 def index(request):
     webinput = request.POST.get("ST0q", "")
     webinput = webinput.replace("^", "**")
+    webinput = webinput.replace("f(x)=", "")
+    webinput = webinput.replace("y=", "")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
     html += simple.hook(webinput)

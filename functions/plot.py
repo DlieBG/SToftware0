@@ -1,7 +1,7 @@
 from sympy import *
 
 def hook(keyinput):
-    if "x" in keyinput:
+    if ("x" in keyinput or "plot") and "=" not in keyinput:
         return getComponents(keyinput)
     return ""
 
