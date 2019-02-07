@@ -1,4 +1,5 @@
 from sympy import *
+from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
     if "extremstellen" in keyinput.lower() or "extrempunkte" in keyinput.lower() or "maxima" in keyinput.lower() or "minima" in keyinput.lower():
@@ -29,7 +30,7 @@ def extrems(term):
     extremes = solve(deriv, x)
     extremsy=[]
     for extrem in extremes:
-        extremsy.append(term.subs(x,extrem))
+        extremsy.append(parse_expr(term).subs(x,extrem))
     deriv2 = diff(term, x, 2)
     deriv2y=[]
     for extrem in extremes:

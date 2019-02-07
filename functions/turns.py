@@ -1,4 +1,5 @@
 from sympy import *
+from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
     if "wendestelle" in keyinput.lower() or "wendepunkt" in keyinput.lower() or "wende" in keyinput.lower() or "turn" in keyinput.lower():
@@ -29,7 +30,7 @@ def turns(term):
     turns = solve(deriv, x)
     turnsy=[]
     for turn in turns:
-        turnsy.append(term.subs(x,turn))
+        turnsy.append(parse_expr(term).subs(x,turn))
     deriv2 = diff(term, x, 3)
     deriv2y=[]
     for turn in turns:
