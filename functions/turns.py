@@ -2,7 +2,7 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
-    if "wendestelle" in keyinput.lower() or "wendepunkt" in keyinput.lower() or "wende" in keyinput.lower() or "turn" in keyinput.lower():
+    if "wendestelle" in keyinput or "wendepunkt" in keyinput or "wende" in keyinput or "turn" in keyinput:
         return getComponents(keyinput)
     return ""
 

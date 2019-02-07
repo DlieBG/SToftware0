@@ -1,7 +1,7 @@
 from sympy import *
 
 def hook(keyinput):
-    if "ableitung" in keyinput.lower() or "ableiten" in keyinput.lower() or "derivative" in keyinput.lower():
+    if "ableitung" in keyinput or "ableiten" in keyinput or "derivative" in keyinput:
         return getComponents(keyinput)
     return ""
 

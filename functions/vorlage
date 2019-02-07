@@ -2,7 +2,7 @@ from sympy import *
 
 def hook(keyinput):
     #Keywords definieren
-    if "" in keyinput.lower()
+    if "" in keyinput
         return getComponents(keyinput)
     return ""
 

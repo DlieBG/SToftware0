@@ -2,7 +2,7 @@ from sympy import *
 from mpmath import *
 
 def hook(keyinput):
-    if "nullstelle" in keyinput.lower() or "nullstellen" in keyinput.lower() or "root" in keyinput.lower() or "roots" in keyinput.lower():
+    if "nullstelle" in keyinput or "nullstellen" in keyinput or "root" in keyinput or "roots" in keyinput:
         return getComponents(keyinput)
     return ""
 

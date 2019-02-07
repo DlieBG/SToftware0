@@ -2,7 +2,7 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
-    if ("löse" in keyinput.lower() or "lösen" in keyinput.lower() or "gleichung" in keyinput.lower() or "solve" in keyinput.lower() or "solver" in keyinput.lower()) and "=" in keyinput:
+    if ("löse" in keyinput or "lösen" in keyinput or "gleichung" in keyinput or "solve" in keyinput or "solver" in keyinput) and "=" in keyinput:
         return getComponents(keyinput)
     return ""
 
