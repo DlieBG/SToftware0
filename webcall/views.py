@@ -9,6 +9,7 @@ from functions import extrems
 from functions import simple
 from functions import discussion
 from functions import turns
+from functions import plot
 
 def index(request):
     webinput = request.POST.get("ST0q", "")
@@ -16,6 +17,7 @@ def index(request):
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     
     html += simple.hook(webinput)
+    html += plot.hook(webinput)    
     html += discussion.hook(webinput)
     html += eastereggs.hook(webinput)
     html += derivative.hook(webinput)

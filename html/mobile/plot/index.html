@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plottet Funktionen">
+<style>
+	#plotarea { background-color:#ffffff; margin:0; height:calc(100vh - 30em); min-height:300px; }
+	#plotter { margin-bottom: 1em; border: none }
+	#plotter div { display:inline-block; vertical-align:top }
+	#plotter div:nth-child(1) label { display:block; }
+	#plotter div:nth-child(2) button { display:block; margin: 1em 0 0 5em;}	
+	#idxmin, #idxmax { text-align:right; width:10em; }
+	#fkt1, #fkt2, #fkt3 { width:30em; }
+</style>
+
+<!-- Damit das Beispiel auch in der Frickl-Ansicht funktioniert, werden die Scripte per Javascript nachgeladen und der Eventlistener von DOMContentLoaded auf load ge�ndert. -->
+<!--<script src="JS-Anw-FktPlot-grafik_canvas.js"></script>-->
+<!--<script src="JS-Anw-FktPlot-plot.js"></script>-->
+<!--<script src="JS-Anw-FktPlot-fkt-plotter.js"></script>-->
+<script>
+"use strict";
+var SW = {};
+SW.loadjs = function (jsfile) {
+	var s = document.createElement("script");
+	s.src = jsfile;
+	s.type = "text/javascript";
+	document.getElementsByTagName("head")[0].appendChild(s);
+}
+// load "JS-Anw-FktPlot-grafik_canvas.js"
+SW.loadjs("JS-Anw-FktPlot-grafik_canvas.js");
+// load "JS-Anw-FktPlot-plot.js"
+SW.loadjs("JS-Anw-FktPlot-plot.js");
+// load "JS-Anw-FktPlot-fkt-plotter.js"
+SW.loadjs("JS-Anw-FktPlot-fkt-plotter.js");
+</script>
+
+</head>
+
+<body>
+	<figure id="plotarea"></figure>
+	<div hidden id="wertetabelle" aria-live="polite"></div>
+
+	
+	<div aria-live="polite">
+		<div hidden>
+		<label id="f1">f<sub>1</sub>(x) = <input type="text" id="fkt1" value=""></label>
+		<label id="f2">f<sub>2</sub>(x) = <input type="text" id="fkt2" value=""></label>
+		<label id="f3">f<sub>3</sub>(x) = <input type="text" id="fkt3" value=""></label>
+		</div>
+	</div>
+	<div style="text-align: center">
+		<label>x_{min} = <input lang="en" type="number" step="any" id="idxmin" value="-20"></label>
+		<label>x_{max} = <input lang="en" type="number" step="any" id="idxmax" value="20"></label>
+		<button id="plotbutton">Plotten</button>
+	</div>
+	</fieldset>
+
+	<script>
+	var url = document.URL;
+	document.getElementById("fkt1").value = url.split("?")[1];
+	</script>
+</body>
+</html>

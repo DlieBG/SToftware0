@@ -1,0 +1,48 @@
+/* Grundlayout für SELFHTML-Beispiele */
+
+html {
+        background: transparent!important;
+}
+
+body {
+	margin: 1em auto;
+	max-width: 60em;
+	font-family: sans-serif;
+	color: #333333;
+}
+
+h1, main, main svg {
+	border-radius: 0 .5rem .5rem;
+	border: 1px solid;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+h1 {
+	background: #F1F3F4 url("//wiki.selfhtml.org/images/a/ad/Selfhtml-beispiel_150.svg") 10px 5px no-repeat;
+	border-color: #d5d5d5;
+	padding-left: 200px;
+}
+
+main {
+	display: block;     /* für IE */	
+	background: #F1F3F4;
+	border-color: #d5d5d5;
+	min-height: 25em;
+}
+
+#hinweis {                    /* für Container */
+	padding: 1em;    
+	margin: 2em auto;
+	min-width: 20em;
+	height: auto;
+	background-color: #f1f3f4;
+	border-left: 5px solid #c32e04;
+}
+
+.hinweis {                    /* für Textzeile */
+        color: #c32e04; 
+        font-style: italic; 
+        border-bottom: 1px dotted; 
+        display:inline-block; 
+}
