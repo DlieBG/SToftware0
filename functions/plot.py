@@ -1,5 +1,4 @@
 from sympy import *
-from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
     if "x" in keyinput or "f(x)" in keyinput:
@@ -26,4 +25,4 @@ def getComponents(keyinput):
 
 def output(out):
     print("")
-    return "\n<iframe src='plot/plot.html?"+out+"' />"
+    return "\n<iframe src='http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/plot/index.html?"+out+"' />"
