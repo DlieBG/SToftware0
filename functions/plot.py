@@ -1,7 +1,7 @@
 from sympy import *
 
 def hook(keyinput):
-    if "x" in keyinput or "f(x)" in keyinput:
+    if "x" in keyinput:
         return getComponents(keyinput)
     return ""
 
