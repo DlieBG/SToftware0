@@ -25,4 +25,4 @@ def getComponents(keyinput):
 
 def output(out):
     print("")
-    return "\n<iframe frameborder='0' scrolling='no' onload='resizeIframe(this)' style='width: 100vw; height: 300px' src='http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/plot/index.html?"+out+"' /><script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script>"
+    return "\n<script>function resizeIframe(obj) {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}</script><iframe frameborder='0' scrolling='no' onload='resizeIframe(this)' style='width: 100vw' src='http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/plot/index.html?"+out+"' />"
