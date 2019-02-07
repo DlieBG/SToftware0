@@ -10,6 +10,9 @@ def hook(keyinput):
     if "hello there" in keyinput:
         print("General Kenobi!")
         return "<h3>General Kenobi!</h3>"
+    if "exit" in keyinput:
+        print("Tschau Kakao!")
+        return "<h3>Tschau Kakao</h3>"
     if "moped" in keyinput:
         print("SOOS!")
         return "<h2>SOOS!</h2>"
