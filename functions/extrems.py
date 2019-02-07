@@ -42,7 +42,7 @@ def output(extremes, extremsy, deriv2y):
     texout="\nMögliche Extremstellen: $$x="+str(latex(extremes))+"$$"
     print("\nMögliche Extremstellen sind: \nx="+str(extremes))
     for extrem in extremes:
-        print("\nf("+str(extrem)+")= "+str(turnsy[extremes.index(extrem)]))
+        print("\nf("+str(extrem)+")= "+str(extesmy[extremes.index(extrem)]))
         print("\nf''("+str(extrem)+")= "+str(deriv2y[extremes.index(extrem)]))
         texout+="\n$$f("+str(latex(extrem))+")= "+str(latex(extremsy[extremes.index(extrem)]))+"$$"
         #texout+="\n$$f''("+str(latex(extrem))+")= "+str(latex(deriv2y[extremes.index(extrem)]))+"$$"
