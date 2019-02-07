@@ -28,6 +28,7 @@ def getComponents(keyinput):
         return integral(term, a, b)
     else:
         print("Es konnte kein Term gefunden werden")
+        return "Es konnte kein Term gefunden werden"
         
 def integral(term, a, b):
     x = symbols('x')
