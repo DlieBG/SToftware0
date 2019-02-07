@@ -28,9 +28,17 @@ def extrems(term):
     x = symbols('x')
     init_printing(use_unicode=True)
     deriv = diff(term, x, 1)
-    out = solve(deriv, x)
-    return output(out, term)
+    extremes = solve(deriv, x)
+    deriv2 = diff(term, x, 2)
+    deriv2y=[]
+    for extrem in extremes:
+        deriv2y.append(deriv2.subs(x,extrem))
+    return output(extremes, deriv2y)
 
-def output(out, term):
-    print("\nDie Extremstellen von "+term+" sind: \nx="+str(out))
-    return "\nExtremstellen: $$x="+str(latex(out))+"$$"
+def output(extremes, deriv2y):
+    texout="\nMögliche Extremstellen: $$x="+str(latex(extremes))+"$$"
+    print("\nMögliche Extremstellen sind: \nx="+str(extremes))
+    for extrem in extremes:
+        print("\nf''("+str(extrem)+")= "+str(deriv2y[extremes.index(extrem)]))
+        texout+="\n$$f''("+str(latex(extrem))+")= "+str(latex(deriv2y[extremes.index(extrem)]))+"$$"
+    return texout
