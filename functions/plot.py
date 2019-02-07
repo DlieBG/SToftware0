@@ -25,4 +25,4 @@ def getComponents(keyinput):
 
 def output(out):
     print("")
-    return "\n<iframe src='http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/plot/index.html?"+out+"' />"
+    return "\n<iframe style='width: 100wh; height: 300px' src='http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/plot/index.html?"+out+"' />"
