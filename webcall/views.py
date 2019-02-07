@@ -18,16 +18,18 @@ def index(request):
     webinput = webinput.replace("f(x)=", "")
     webinput = webinput.replace("y=", "")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
-    
-    html += simple.hook(webinput)
-    html += plot.hook(webinput)    
-    html += discussion.hook(webinput)
-    html += eastereggs.hook(webinput)
-    html += derivative.hook(webinput)
-    html += integral.hook(webinput)
-    html += root.hook(webinput)
-    html += extrems.hook(webinput)
-    html += turns.hook(webinput)
-    html += solve.hook(webinput)
-
-    return HttpResponse(html)
+    try:
+        html += simple.hook(webinput)
+        html += plot.hook(webinput)    
+        html += discussion.hook(webinput)
+        html += eastereggs.hook(webinput)
+        html += derivative.hook(webinput)
+        html += integral.hook(webinput)
+        html += root.hook(webinput)
+        html += extrems.hook(webinput)
+        html += turns.hook(webinput)
+        html += solve.hook(webinput)
+    except:
+        html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
+    finally:
+        return HttpResponse(html)
