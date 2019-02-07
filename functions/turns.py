@@ -15,8 +15,6 @@ def getComponents(keyinput):
             term = part
             if "=" in term:
                 term = term.split("=")[1]
-            term = term.replace("y=", "")
-            term = term.replace("f(x)=", "")
     
     if term is not "":
         return turns(term)
