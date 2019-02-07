@@ -21,18 +21,20 @@ def main():
     keyinput = keyinput.replace("^", "**")
     keyinput = keyinput.replace("f(x)=", "")
     keyinput = keyinput.replace("y=", "")
-
-    simple.hook(keyinput)
-    discussion.hook(keyinput)
-    eastereggs.hook(keyinput)
-    derivative.hook(keyinput)
-    integral.hook(keyinput)
-    root.hook(keyinput)
-    extrems.hook(keyinput)
-    turns.hook(keyinput)
-    solve.hook(keyinput)
-
-    if "exit" not in keyinput:
-        main()
+    try:
+        simple.hook(keyinput)
+        discussion.hook(keyinput)
+        eastereggs.hook(keyinput)
+        derivative.hook(keyinput)
+        integral.hook(keyinput)
+        root.hook(keyinput)
+        extrems.hook(keyinput)
+        turns.hook(keyinput)
+        solve.hook(keyinput)
+    except:
+        print("Entweder DU bist schuld oder das Programm ist schuld")
+    finally:
+        if "exit" not in keyinput:
+            main()
 
 main()
