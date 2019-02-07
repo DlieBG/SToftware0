@@ -1,7 +1,7 @@
 from sympy import *
 
 def hook(keyinput):
-    if "stammfunktion" in keyinput.lower() or "integral" in keyinput.lower() or "aufleitung" in keyinput.lower() or "aufleiten" in keyinput.lower():
+    if "stammfunktion" in keyinput or "integral" in keyinput or "aufleitung" in keyinput or "aufleiten" in keyinput:
         return getComponents(keyinput)
     return ""
 

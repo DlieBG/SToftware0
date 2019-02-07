@@ -2,7 +2,7 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
-    if "extremstellen" in keyinput.lower() or "extrempunkte" in keyinput.lower() or "maxima" in keyinput.lower() or "minima" in keyinput.lower():
+    if "extremstellen" in keyinput or "extrempunkte" in keyinput or "maxima" in keyinput or "minima" in keyinput:
         return getComponents(keyinput)
     return ""
 
