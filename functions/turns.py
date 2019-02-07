@@ -28,9 +28,17 @@ def turns(term):
     x = symbols('x')
     init_printing(use_unicode=True)
     deriv = diff(term, x, 2)
-    out = solve(deriv, x)
-    return output(out, term)
+    turns = solve(deriv, x)
+    deriv2 = diff(term, x, 3)
+    deriv2y=[]
+    for turn in turns:
+        deriv2y.append(deriv2.subs(x,turn))
+    return output(turns, deriv2y)
 
-def output(out, term):
-    print("\nDie Wendestellen von "+term+" sind: \nx="+str(out))
-    return "\nWendestellen: $$x="+str(latex(out))+"$$"
+def output(turns, deriv2y):
+    texout="\nMögliche Wendestellen: $$x="+str(latex(turns))+"$$"
+    print("\nMögliche Wendestellen sind: \nx="+str(turns))
+    for turn in turns:
+        print("\nf'''("+str(turn)+")= "+str(deriv2y[turns.index(turn)]))
+        texout+="\n$$f'''("+str(latex(turn))+")= "+str(latex(deriv2y[turns.index(turn)]))+"$$"
+    return texout
