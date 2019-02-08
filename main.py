@@ -10,7 +10,7 @@ from functions import extrems
 from functions import simple
 from functions import discussion
 from functions import turns
-
+from functions import plotcli
 print("Willkommen bei SToftware0 by bschwering & ftuente")
 
 
@@ -31,6 +31,7 @@ def main():
         extrems.hook(keyinput)
         turns.hook(keyinput)
         solve.hook(keyinput)
+        plotcli.hook(keyinput)
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
