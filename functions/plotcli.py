@@ -2,7 +2,7 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 def hook(keyinput):
-    if "plot" in keyinput:
+    if "plot" in keyinput or "zeichne" in keyinput:
         return getComponents(keyinput)
     return ""
 
