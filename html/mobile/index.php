@@ -63,6 +63,7 @@ fclose($datei);
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       
+  <div id="header">    
       <nav>
           <div class="nav-wrapper">
             <a href="" class="brand-logo center">SToftware0</a>
@@ -84,7 +85,7 @@ fclose($datei);
             </div>
           </div>
         </p>
-
+  </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         
         
