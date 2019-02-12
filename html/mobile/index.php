@@ -87,9 +87,9 @@ fclose($datei);
         </p>
   </div>
   <div id="body">
-        <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 160px); border: none;" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
+        <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 276px); border: none;" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
   </div>
-  <div id="footer" style="background:#ee6e73;">
+  <div id="footer" style="position:absolute;bottom:0;width:100%;height:64px;background:#ee6e73;">
       <nav>
           <div class="nav-wrapper">
             <a href="" class="brand-logo center">SToftware0 by Benedikt Schwering & Florian T&uuml;nte</a>
