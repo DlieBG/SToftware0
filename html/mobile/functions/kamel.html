@@ -80,6 +80,9 @@
                         Statur:<br>
                         <input name="statur" type="radio" id="breit" />
                         <label for="breit">Breit</label>
+
+                        <input name="statur" type="radio" id="normal"  />
+                        <label for="normal">Normal</label>
   
                         <input name="statur" type="radio" id="schlank"  />
                         <label for="schlank">Schlank</label>
@@ -128,9 +131,11 @@
             points+=4
 
           if(document.getElementById("breit").checked)
-            points+=14
+            points+=12
+          if(document.getElementById("normal").checked)
+            points+=9
           if(document.getElementById("schlank").checked)
-            points+=8
+            points+=7
           if(document.getElementById("dick").checked)
             points-=5
 
