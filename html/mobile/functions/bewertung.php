@@ -69,8 +69,13 @@ file_put_contents($file, $_POST['bewertung']);
       document.getElementById("sendbtn").onclick= 
         function()
         {
-          Materialize.toast('Danke!', 4000)
-          post("bewertung.php", {bewertung: document.getElementById("bewertung").value });
+          if(document.getElementById("bewertung").value!="")
+          {
+            Materialize.toast('Danke!', 4000)
+            post("bewertung.php", {bewertung: document.getElementById("bewertung").value });
+          }
+          else
+          Materialize.toast('Bitte etwas eingeben!', 4000)
         }
 
       function post(path, params, method) {
