@@ -1,8 +1,9 @@
 <?php
 $datum = date('d').'.'.date('m').'.'.date('Y');
+$zeit = date('H').':'.date('i');
 echo $datum;
 mkdir('/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum);
-$file = '/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum.'/'.$_POST['name'];
+$file = '/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum.'/'.$zeit;
 file_put_contents($file, $_POST['bewertung']);
 
 ?>
@@ -68,7 +69,7 @@ file_put_contents($file, $_POST['bewertung']);
       document.getElementById("sendbtn").onclick= 
         function()
         {
-          post("bewertung.php", {name:"Test", bemerkung:"asd"});
+          post("bewertung.php", {bewertung: document.getElementById("bewertung").value });
         }
 
       function post(path, params, method) {
