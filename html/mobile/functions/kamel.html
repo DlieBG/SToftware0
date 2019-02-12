@@ -44,7 +44,7 @@
                     </div>
 
                     <p>
-                      Haarfarbe:
+                      Haarfarbe:<br>
                       <input name="haarfarbe" type="radio" id="blond" />
                       <label for="blond">Blond</label>
 
@@ -60,21 +60,82 @@
                       <input name="haarfarbe" type="radio" id="rot"/>
                       <label for="rot">Rot</label>
                     </p>
+                    <br>
+                    <p>
+                      Haarlänge:<br>
+                      <input name="haarlaenge" type="radio" id="lang" />
+                      <label for="lang">Lang</label>
+
+                      <input name="haarlaenge" type="radio" id="mittel"  />
+                      <label for="mittel">Mittel</label>
+
+                      <input name="haarlaenge" type="radio" id="kurz"/>
+                      <label for="kurz">Kurz</label>
+
+                      <input name="haarlaenge" type="radio" id="glatze"/>
+                      <label for="glatze">Glatze</label>
+                    </p>
+                    <br>
+                    <p>
+                        Statur:<br>
+                        <input name="statur" type="radio" id="breit" />
+                        <label for="breit">Breit</label>
+  
+                        <input name="statur" type="radio" id="schlank"  />
+                        <label for="schlank">Schlank</label>
+  
+                        <input name="statur" type="radio" id="dick"/>
+                        <label for="dick">Dick</label>
+                      </p>
                   </p>
               </div>
               <div class="card-action">
-                <a href="#">Auswerten</a>
+                <a href="#" id="auswrtbtn">Auswerten</a>
               </div>
+              <div class="card-action" id="out">
+                  
+                </div>
             </div>
           </div>
         </div>
 
-
-      
-
-
       <script>
-      
+        document.getElementById("auswrtbtn").onclick= 
+        function()
+        {
+          var points = 10;
+
+          points += Math.ceil((3*document.getElementById("groesse").value)/document.getElementById("alter").value);
+          
+          if(document.getElementById("blond").checked)
+            points+=18
+          if(document.getElementById("braun").checked)
+            points+=9 
+          if(document.getElementById("schwarz").checked)
+            points+=6
+          if(document.getElementById("grau").checked)
+            points+=0
+          if(document.getElementById("rot").checked)
+            points-=7
+
+          if(document.getElementById("lang").checked)
+            points+=12
+          if(document.getElementById("mittel").checked)
+            points+=10
+          if(document.getElementById("kurz").checked)
+            points+=6
+          if(document.getElementById("glatze").checked)
+            points+=4
+
+          if(document.getElementById("breit").checked)
+            points+=14
+          if(document.getElementById("schlank").checked)
+            points+=8
+          if(document.getElementById("dick").checked)
+            points-=5
+
+          document.getElementById("out").innerHTML="<h4>Du bist <b>"+points+"</b> Kamele wert!</h4>";
+        };
       </script>
     <script type="text/javascript" src="../js/materialize.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
