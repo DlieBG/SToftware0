@@ -4,8 +4,8 @@ $zeit = date('H').':'.date('i');
 
 mkdir('/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum);
 $file = '/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum.'/'.$zeit;
-file_put_contents($file, $_POST['bewertung']);
-
+if($_POST['bewertung']!='')
+  file_put_contents($file, $_POST['bewertung']);
 ?>
 
 <!DOCTYPE html>
