@@ -12,6 +12,7 @@ from functions import discussion
 from functions import turns
 from functions import plotcli
 from functions import kamel
+from functions import feedback
 print("Willkommen bei SToftware0 by bschwering & ftuente")
 
 
@@ -34,6 +35,7 @@ def main():
         solve.hook(keyinput)
         plotcli.hook(keyinput)
         kamel.hook(keyinput)
+        feedback.hook(keyinput)
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
