@@ -86,9 +86,6 @@ fclose($datei);
           </div>
         </p>
   </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-        
         <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 160px); border: none;" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
 
 
