@@ -86,11 +86,12 @@ fclose($datei);
         </p>
 
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+        <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 64px); border: none;" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
 
 
-        <iframe id="iframe" name="iframe" style="width:100vw; height: 55vh; border: none" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
-
-        <footer class="page-footer">
+        <footer class="page-footer" style=" position:absolute;bottom:0;width:100%;height:300px;" hidden>
             <div class="container">
               <div class="row">
                 <div class="col l6 s12">
