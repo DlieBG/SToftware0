@@ -7,5 +7,5 @@ def hook(keyinput):
     return ""
 
 def output(keyinput):
-    print("Bewertung ist nur Online verfügbar!")
+    print("Bewertung ist nur Online verfügbar!\nwenn sie so krass sind, dass sie die Kommandozeilenfunktion nutzen können sie uns ihre Ideen einfach auf github mitteilen")
     return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/bewertung.php'>"
