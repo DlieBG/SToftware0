@@ -1,8 +1,8 @@
 <?php
 $datum = date('d').'.'.date('m').'.'.date('Y');
 echo $datum;
-mkdir('/var/www/html/SToftware0/python/Stoftware0/html/bewertungen/'.$datum);
-$file = '/var/www/html/SToftware0/python/Stoftware0/html/bewertungen/'.$datum.'/'.$_POST['name'];
+mkdir('/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum);
+$file = '/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum.'/'.$_POST['name'];
 file_put_contents($file, $_POST['bewertung']);
 
 ?>
