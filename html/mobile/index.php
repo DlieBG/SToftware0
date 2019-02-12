@@ -92,7 +92,7 @@ fclose($datei);
   <div id="footer" style="position:absolute;bottom:0;width:100%;height:64px;background:#ee6e73;">
         <nav style="position:absolute;bottom:0;width:100%;height:64px;background:#ee6e73;">
           <div class="nav-wrapper" style="position:absolute;bottom:0;width:100%;height:64px;background:#ee6e73;">
-            <a href="" class="brand-logo center">SToftware0 by Benedikt Schwering & Florian T&uuml;nte</a>
+            <a href="" style="height: 64px;" class="brand-logo center">SToftware0 by Benedikt Schwering & Florian T&uuml;nte</a>
           </div>
         </nav>
   </div>
