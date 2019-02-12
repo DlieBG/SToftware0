@@ -10,6 +10,7 @@ from functions import simple
 from functions import discussion
 from functions import turns
 from functions import plot
+from functions import kamel
 
 def index(request):
     webinput = request.POST.get("ST0q", "")
@@ -29,6 +30,7 @@ def index(request):
         html += extrems.hook(webinput)
         html += turns.hook(webinput)
         html += solve.hook(webinput)
+        html += kamel.hook(webinput)
     except:
         html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
     finally:
