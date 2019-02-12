@@ -68,7 +68,7 @@ file_put_contents($file, $_POST['bewertung']);
       document.getElementById("sendbtn").onclick= 
         function()
         {
-          post("", {name:"Test", bemerkung:"asd"})
+          post("bewertung.php", {name:"Test", bemerkung:"asd"});
         }
 
       function post(path, params, method) {
