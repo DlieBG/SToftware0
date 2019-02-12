@@ -1,7 +1,7 @@
 <?php
 $datum = date('d').'.'.date('m').'.'.date('Y');
 $zeit = date('H').':'.date('i');
-echo $datum;
+
 mkdir('/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum);
 $file = '/var/www/html/SToftware0/python/SToftware0/html/bewertungen/'.$datum.'/'.$zeit;
 file_put_contents($file, $_POST['bewertung']);
@@ -69,6 +69,7 @@ file_put_contents($file, $_POST['bewertung']);
       document.getElementById("sendbtn").onclick= 
         function()
         {
+          Materialize.toast('Danke!', 4000)
           post("bewertung.php", {bewertung: document.getElementById("bewertung").value });
         }
 
