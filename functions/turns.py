@@ -16,13 +16,13 @@ def getComponents(keyinput):
             term = part
             if "=" in term:
                 term = term.split("=")[1]
-    
+
     if term is not "":
         return turns(term)
     else:
         print("Fehler")
         return "Fehler"
-        
+
 def turns(term):
     x = symbols('x')
     init_printing(use_unicode=True)

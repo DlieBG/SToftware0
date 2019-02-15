@@ -13,15 +13,15 @@ def getComponents(keyinput):
     parts = keyinput.split(' ')
     for part in parts:
         #Teile den Variablen zuordnen
-    
+
     if  is not "": #Abbruchbedingung
         return functionX()
     else:
         print("Fehler")
         return "Fehler"
-        
+
 def functionX():
-    #Berechnung der 
+    #Berechnung der
     return output(out, term)
 
 def output(out, term):

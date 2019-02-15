@@ -12,16 +12,12 @@ def getComponents(keyinput):
     parts = keyinput.split(' ')
     for part in parts:
         #Teile den Variablen zuordnen
-    
+
     if  is not "": #Abbruchbedingung
-        return functionX()
+        return output(ort)
     else:
         print("Fehler")
         return "Fehler"
-        
-def functionX():
-    #Berechnung der 
-    return output(out, term)
 
-def output(out, term):
-    #Ausgabe der Werte
+def output(ort):
+    print("Wetter ist nur Online verfügbar.")
