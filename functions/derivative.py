@@ -16,8 +16,6 @@ def getComponents(keyinput):
             term = part
             if "=" in term:
                 term = term.split("=")[1]
-            term = term.replace("y=", "")
-            term = term.replace("f(x)=", "")
         if part.endswith("."):
             level = part.split('.')[0]
             level = level
