@@ -1,7 +1,7 @@
 from sympy import *
 
 def hook(keyinput):
-    if "polinomdivision" in keyinput:
+    if "polinom" in keyinput and ("division" in keyinput or "dividi" in keyinput):
         return getComponents(keyinput)
     return ""
 
