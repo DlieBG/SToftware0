@@ -14,7 +14,7 @@ from functions import plotcli
 from functions import kamel
 from functions import feedback
 from functions import polynomial
-print("Willkommen bei SToftware0 by bschwering & ftuente")
+print("Willkommen bei SToftware0 by bschwering & ftuente\n\nBesuche doch mal die Website benedikt-schwering.de/SToftware0\n")
 
 
 def main():
