@@ -12,7 +12,7 @@ def getComponents(keyinput):
 
     parts = keyinput.split(' ')
     for part in parts:
-        if "/" in part:
+        if "/" in part:#TODO optimize for / in a or b  Maybe tomorrow XD
             a = part.split("/")[0]
             b = part.split("/")[1]
     

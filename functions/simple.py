@@ -15,10 +15,6 @@ def getComponents(keyinput):
         for part in parts:
             if "*" in part or "+" in part or "/" in part or "-" in part or "sin" in part or "cos" in part or "tan" in part or "exp" in part or "sqrt" in part or "pi" in part or "ln" in part or "log" in part or part is "x":
                 term = part
-                if "=" in term:
-                    term = term.split("=")[1]
-                term = term.replace("y=", "")
-                term = term.replace("f(x)=", "")
 
         if term is not "":
             return simple(term)
