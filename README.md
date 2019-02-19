@@ -18,6 +18,9 @@ You need the following Packages under Linux:<br>
 <li>python3</li>
 <li>python3-sympy</li>
 </ul>
+<p>
+Try install.sh
+</p>
 </p>
 <p>
 For Server usage also<br>
