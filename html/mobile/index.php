@@ -57,6 +57,13 @@ fclose($datei);
           enable_page_level_ads: true
         });
       </script>
+
+
+      <meta name="description" content="Intelligenter Mathematik-Interpreter mit deutscher Eingabe. Von Benedikt Schwering und Florian Tünte">
+      <meta name="keywords" content="Benedikt Schwering, Florian Tünte, SToftware, SToftware0, Mathematik, Interpreter,  Mathematica, Wolfram, Ableitungsrechner, Ableitung, Integral, Online, Rechner, Mathematik">
+
+        <title>SToftware0 - Intelligentes Mathematiktool</title>
+
     </head>
 
     <body>
