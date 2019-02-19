@@ -11,9 +11,10 @@ def getComponents(keyinput):
 
     parts = keyinput.split(' ')
     for part in parts:
-        #Teile den Variablen zuordnen
+        if "wetter" not in part:
+            ort = part
 
-    if  is not "": #Abbruchbedingung
+    if ort is not "": #Abbruchbedingung
         return output(ort)
     else:
         print("Fehler")
@@ -21,3 +22,4 @@ def getComponents(keyinput):
 
 def output(ort):
     print("Wetter ist nur Online verfügbar.")
+    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/weather.html?'"+ort+">"    
