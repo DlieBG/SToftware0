@@ -12,6 +12,7 @@ def getComponents(keyinput):
     parts = keyinput.split(' ')
     for part in parts:
         if "wetter" not in part:
+            ort = ort.replace("?", "")
             ort = part
 
     if ort is not "": #Abbruchbedingung

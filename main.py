@@ -14,8 +14,9 @@ from functions import plotcli
 from functions import kamel
 from functions import feedback
 from functions import polynomial
-print("Willkommen bei SToftware0 by bschwering & ftuente\n\nBesuche doch mal die Website benedikt-schwering.de/SToftware0\n")
+from functions import weather
 
+print("Willkommen bei SToftware0 by bschwering & ftuente\n\nBesuche doch mal die Website benedikt-schwering.de/SToftware0\n")
 
 def main():
     print("\n\nBitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
@@ -38,6 +39,7 @@ def main():
         kamel.hook(keyinput)
         feedback.hook(keyinput)
         polynomial.hook(keyinput)
+        weather.hook(keyinput)
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
