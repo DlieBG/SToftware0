@@ -12,8 +12,8 @@ def getComponents(keyinput):
     parts = keyinput.split(' ')
     for part in parts:
         if "wetter" not in part:
-            ort = ort.replace("?", "")
-            ort = part
+            ort = part.replace("?", "")
+            ort = ort.capitalize()
 
     if ort is not "": #Abbruchbedingung
         return output(ort)
@@ -22,5 +22,5 @@ def getComponents(keyinput):
         return "Fehler"
 
 def output(ort):
-    print("Wetter ist nur Online verfügbar.")
-    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/weather.html?'"+ort+">"    
+    print("Wetter für "+ort+" ist nur Online verfügbar.")
+    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/weather.html?"+ort+"'>"    
