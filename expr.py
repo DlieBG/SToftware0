@@ -2,9 +2,9 @@ from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
 
-def isTerm(term):
+def isTerm(possibleTerm):
     try:
-        parse_expr(term)
+        parse_expr(possibleTerm)
     except:
         return False
     finally:
