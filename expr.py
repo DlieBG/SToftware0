@@ -15,12 +15,15 @@ def findTerm(keyinput):
     for part in parts:
         if isTerm(part) and not isKeyword(part):
             return part
-            
+
     return ""
-    
+
 def isKeyword(s):
     keywords=["ableit","derivate"]#TODO add all options (if included)
     for phrase in keywords:
         if phrase in s:
             return True
     return False
+
+#good improvement
+##a commit a day keeps the doctor away
