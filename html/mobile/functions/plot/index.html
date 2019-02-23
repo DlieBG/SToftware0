@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Plottet Funktionen">
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=default" async></script>
 <style>
 	#plotarea { background-color:#ffffff; margin:0; height:calc(100vh - 30em); min-height:300px; }
 	#plotter { margin-bottom: 1em; border: none }
@@ -50,8 +51,9 @@ SW.loadjs("JS-Anw-FktPlot-fkt-plotter.js");
 		</div>
 	</div>
 	<div style="text-align: center">
-		<label>x_{min} = <input lang="en" type="number" step="any" id="idxmin" value="-20"></label>
-		<label>x_{max} = <input lang="en" type="number" step="any" id="idxmax" value="20"></label>
+		<label>$$x_{min} = $$<input lang="en" type="number" step="any" id="idxmin" value="-20"></label>
+		<label>$$x_{max} = $$<input lang="en" type="number" step="any" id="idxmax" value="20"></label>
+		<br><br>
 		<button id="plotbutton">aktualisieren</button>
 	</div>
 	</fieldset>
