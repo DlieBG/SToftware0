@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <?php
 $format = "txt"; //Moeglichkeiten: csv und txt
- 
+
 $datum_zeit = date("d.m.Y H:i:s");
 $ip = $_SERVER["REMOTE_ADDR"];
 $site = $_SERVER['REQUEST_URI'];
 $browser = $_SERVER["HTTP_USER_AGENT"];
- 
+
 $monate = array(1=>"Januar", 2=>"Februar", 3=>"Maerz", 4=>"April", 5=>"Mai", 6=>"Juni", 7=>"Juli", 8=>"August", 9=>"September", 10=>"Oktober", 11=>"November", 12=>"Dezember");
 $monat = date("n");
 $jahr = date("y");
- 
+
 $dateiname="logs/log_".$monate[$monat]."_$jahr.$format";
- 
+
 $header = array("Datum", "IP", "Seite", "Browser");
 $infos = array($datum_zeit, $ip, $site, $browser);
- 
+
 if($format == "csv") {
  $eintrag= '"'.implode('", "', $infos).'"';
-} else { 
+} else {
  $eintrag = implode("\t", $infos);
 }
- 
+
 $write_header = !file_exists($dateiname);
- 
+
 $datei=fopen($dateiname,"a");
- 
+
 if($write_header) {
  if($format == "csv") {
  $header_line = '"'.implode('", "', $header).'"';
  } else {
  $header_line = implode("\t", $header);
  }
- 
+
  fputs($datei, $header_line."\n");
 }
- 
+
 fputs($datei,$eintrag."\n");
 fclose($datei);
 ?>
@@ -69,8 +69,8 @@ fclose($datei);
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      
-  <div id="header">    
+
+  <div id="header">
       <nav>
           <div class="nav-wrapper">
             <ul class="left">
@@ -99,7 +99,7 @@ fclose($datei);
         <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 186px); border: none;" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
   </div>
   <div id="footer" style="position:absolute;bottom:0;width:100%;height:32px;">
-    SToftware0 by Benedikt Schwering & Florian T&uuml;nte 
+    SToftware0 by Benedikt Schwering & Florian T&uuml;nte
         <nav style="position:absolute;bottom:0;width:100%;height:64px;background:#ee6e73;" hidden>
           <div class="nav-wrapper" style="position:absolute;bottom:0;width:100%;height:64px;background:#ee6e73;">
             <a href="" style="height: 64px;" class="brand-logo center">SToftware0 by Benedikt Schwering & Florian T&uuml;nte</a>
@@ -136,15 +136,23 @@ fclose($datei);
               </div>
             </div>
           </footer>
-        
+
 
 
 
         <script type="text/javascript" src="js/materialize.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script>
+      document.getElementById("input").oninput = function()
+      {
+        document.getElementById("input").value = document.getElementById("input").value.replace("ä", "ae");
+        document.getElementById("input").value = document.getElementById("input").value.replace("ü", "ue");
+        document.getElementById("input").value = document.getElementById("input").value.replace("ö", "oe");
+        document.getElementById("input").value = document.getElementById("input").value.replace("Ä", "Ae");
+        document.getElementById("input").value = document.getElementById("input").value.replace("Ü", "Ue");
+        document.getElementById("input").value = document.getElementById("input").value.replace("Ö", "Oe");
+      }
 
-        
       </script>
     </body>
   </html>
