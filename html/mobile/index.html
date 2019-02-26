@@ -22,11 +22,22 @@ background-color: black;
 
         <title>SToftware0 - Intelligentes Mathematiktool</title>
 
-      <meta http-equiv='refresh' content='2; URL=index.php'>
+      <meta http-equiv='refresh' content='10; URL=index.php'>
 </head>
 <body>
-<video width="100%" autoplay muted>
+<video id="video" width="100%" autoplay muted onended="window.location.href = 'index.php';">
   <source src="SoftwareShort.mp4" type="video/mp4">
 </video>
 </body>
+<script>
+function check() {
+    setTimeout(function () {
+        if(!document.getElementById("video").playing)
+          window.location.href = "index.php";
+        else
+          check();
+    }, 2000);
+}
+check();
+</script>
 </html>
