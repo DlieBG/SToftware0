@@ -35,6 +35,7 @@ def index(request):
         html += solve.hook(webinput)
         html += kamel.hook(webinput)
         html += feedback.hook(webinput)
+        html += polynomial.hook(webinput)
         html += weather.hook(webinput)
     except:
         html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
