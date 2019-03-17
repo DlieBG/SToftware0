@@ -22,15 +22,15 @@ def getComponents(keyinput):
 
 
     if k is not -1 and n is not -1: #Abbruchbedingung
-        return nT(n, k)
+        return nueK(n, k)
     else:
         print("Fehler")
         return "Fehler"
 
-def nT(n, k):
-    out = binomial(18, 8)
+def nueK(n, k):
+    out = binomial(n, k)
     return output(out, n, k)
 
 def output(out, n, k):
-    print("\n"+n+" über "+k+" ist: \n"+str(out))
+    print("\n"+str(n)+" über "+str(k)+" ist: \n"+str(out))
     return "\nBinomialverteilung: "+str(latex(out))+"$$"
