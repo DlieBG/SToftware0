@@ -15,6 +15,7 @@ from functions import kamel
 from functions import feedback
 from functions import polynomial
 from functions import weather
+from functions import binomial
 
 print("Willkommen bei SToftware0 by bschwering & ftuente\n\nBesuche doch mal die Website benedikt-schwering.de/SToftware0\n")
 
@@ -40,6 +41,7 @@ def main():
         feedback.hook(keyinput)
         polynomial.hook(keyinput)
         weather.hook(keyinput)
+        binomial.hook(keyinput)
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
