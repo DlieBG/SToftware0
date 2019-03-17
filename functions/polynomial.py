@@ -24,7 +24,7 @@ def getComponents(keyinput):
 
 def polinomdiv(a, b):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     out, g = div(a, b, x)
     return output(out, a, b)
 

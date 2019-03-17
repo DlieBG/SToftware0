@@ -27,7 +27,7 @@ def getComponents(keyinput):
         
 def derivative(term, level):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     out = diff(term, x, level)
     return output(out, term, int(level))
 

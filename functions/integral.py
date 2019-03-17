@@ -32,7 +32,7 @@ def getComponents(keyinput):
         
 def integral(term, a, b):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     if a is "" or b is "":
         out = integrate(term, x)
     else:

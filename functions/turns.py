@@ -25,7 +25,7 @@ def getComponents(keyinput):
 
 def turns(term):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     deriv = diff(term, x, 2)
     turns = solve(deriv, x)
     turnsy=[]

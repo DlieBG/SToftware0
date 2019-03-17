@@ -25,7 +25,7 @@ def getComponents(keyinput):
         
 def extrems(term):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     deriv = diff(term, x, 1)
     extremes = solve(deriv, x)
     extremsy=[]

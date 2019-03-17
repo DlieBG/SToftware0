@@ -29,7 +29,7 @@ def getComponents(keyinput):
 
 def solves(term, left, right):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     out = solveset(Eq(parse_expr(left), parse_expr(right)), x)
     return output(out, term)
 

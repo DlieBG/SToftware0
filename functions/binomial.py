@@ -33,4 +33,4 @@ def nueK(n, k):
 
 def output(out, n, k):
     print("\n"+str(n)+" über "+str(k)+" ist: \n"+str(out))
-    return "\nBinomialverteilung: "+str(latex(out))+"$$"
+    return "\nEingabe: $${"+str(n)+"\\choose "+str(k)+"}$$\nBinomialverteilung: $$"+str(latex(out))+"$$"

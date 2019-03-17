@@ -27,7 +27,7 @@ def getComponents(keyinput):
         
 def rootss(term):
     x = symbols('x')
-    init_printing(use_unicode=True)
+    init_printing()
     out = solve(term, x)
     return output(out, term)
 
