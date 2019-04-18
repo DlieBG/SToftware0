@@ -78,7 +78,7 @@ fclose($datei);
             </ul>
             <a href="" class="brand-logo center">SToftware0</a>
             <ul class="right">
-              <li><a href="https://www.paypal.me/DlieBG/5"><i class="material-icons">euro_symbol</i></a></li>
+              <!--<li><a href="https://www.paypal.me/DlieBG/5"><i class="material-icons">euro_symbol</i></a></li>-->
               <li><a onclick="document.getElementById('input').value='bewertung';document.getElementById('form').submit()"><i class="material-icons">star</i></a></li>
             </ul>
           </div>
