@@ -1,7 +1,7 @@
 # SToftware0
 <p>
 This projekt already runs on:<br>
-bendedikt-schwering.de/SToftware0
+http://www.bendedikt-schwering.de/SToftware0
 </p>
 <p>
 You need the following Python-Components to run the Program:<br>
