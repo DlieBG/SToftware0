@@ -1,4 +1,5 @@
 # SToftware0
+<a href='https://play.google.com/store/apps/details?id=com.benedikt_schwering.stoftware0&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Jetzt bei Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/de_badge_web_generic.png'/></a>
 <p>
 This projekt already runs on:<br>
 http://www.benedikt-schwering.de/SToftware0
