@@ -2,13 +2,10 @@ from sympy import *
 
 def hook(keyinput):
     #Keywords definieren
-    if "Schach" in keyinput:
-        return getComponents(keyinput)
+    if "schach" in keyinput:
+        return output(keyinput)
     return ""
 
-def getComponents(keyinput):
-    return output()
-
-def output():
-    print("Bitte benutze die Onlineversion!")
+def output(keyinput):
+    print("Kamelrechner ist nur Online verfügbar!")
     return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/chess.html'>"
