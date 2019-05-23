@@ -15,6 +15,7 @@ from functions import feedback
 from functions import polynomial
 from functions import weather
 from functions import binomial
+from functions import chessproblem
 
 def index(request):
     webinput = request.POST.get("ST0q", "")
@@ -39,6 +40,7 @@ def index(request):
         html += polynomial.hook(webinput)
         html += weather.hook(webinput)
         html += binomial.hook(webinput)
+        html += chessinput.hook(webinput)
     except:
         html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
     finally:
