@@ -68,7 +68,7 @@ def stationaereverteilung():
         [0],
         [0],
     ])
-    return "Eingabe:$$"+latex(M)+"*"+latex(V)+"$$\nStationäre Verteilung:$$"+latex(N(M**100*V, 10))+"$$"
+    return "Eingabe:$$"+latex(M)+"*"+latex(V)+"$$\nStationäre Verteilung:$$"+latex(M**100*V)+"$$\nStationäre Verteilung (gerundet):$$"+latex(N(M**100*V, 10))+"$$"
 
 def output(keyinput):
     return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/chess.html'>"
