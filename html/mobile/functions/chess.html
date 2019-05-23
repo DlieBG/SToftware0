@@ -12,36 +12,39 @@
   </head>
   <body>
 
-    <table class="table">
-        <thead id="head">
-          <tr>
-            <th scope="col">von<br>nach</bt></th>
-            <th scope="col">1</th>
-            <th scope="col">2</th>
-            <th scope="col">3</th>
-          </tr>
-        </thead>
-        <tbody id="matrix">
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Das Schachproblem</a>
+        </nav>
+        
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Wahrscheinlichkeiten</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Stationäreverteilung</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Übergangsmatrix</a>
+            </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <link rel="stylesheet" href="https://chessboardjs.com/css/chessboard.css" />
+                <div id="board" style="width: 400px"></div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <table class="table">
+                    <thead id="head">
+                    <tr>
+                    </tr>
+                    </thead>
+                    <tbody id="matrix">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         
 
     <!-- Optional JavaScript -->
@@ -94,6 +97,21 @@
         document.getElementById("head").innerHTML = head;
         document.getElementById("matrix").innerHTML = html;
 
+    </script>
+    <base href="https://chessboardjs.com/" />
+    <script src="js/json3.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/chessboard.js"></script>
+    <script>
+                var position = {
+            d6: 'bK'
+        };
+        var cfg = {
+        draggable: true,
+        dropOffBoard: 'snapback', // this is the default
+        position: position
+        };
+        var board = ChessBoard('board', cfg);
     </script>
   </body>
 </html>
