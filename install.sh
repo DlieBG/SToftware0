@@ -1,6 +1,14 @@
 #!/bin/bash
-apt install python3 -y
-apt install python3-sympy -y
+apt update
+apt install python3-pip -y
+pip3 install sympy --upgrade
 if [ $? -eq 1 ] ; then
-    echo "It looks your Linux has no python3-sympy package\n please look under dependencies an install it yourself"
+    echo "sympy could not be installed"
+fi
+#uncomment for sserver installation
+exit
+
+pip3 install django --upgrade
+if [ $? -eq 1 ] ; then
+    echo "django could not be installed"
 fi

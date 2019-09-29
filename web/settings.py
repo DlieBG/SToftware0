@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g1wt*#$j+otj@%(gu86^slktc%)p6_)r+0ogd-!*c=6^afao3p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['http://benedikt-schwering.de', 'benedikt-schwering.de', '127.0.0.1', 'localhost', 'http://boba2fett.myonlineportal.org', 'boba2fett.myonlineportal.org']
+ALLOWED_HOSTS = ['http://benedikt-schwering.de', 'benedikt-schwering.de', '127.0.0.1', 'localhost', 'http://boba2fett.myonlineportal.org', 'boba2fett.myonlineportal.org', 'https://boba2fett.myonlineportal.org']
 
 
 # Application definition
@@ -103,9 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de-de'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'CET'
 
 USE_I18N = True
 
