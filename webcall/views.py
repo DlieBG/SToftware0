@@ -42,7 +42,7 @@ def index(request):
         html += weather.hook(webinput)
         html += binomial.hook(webinput)
         html += chessproblem.hook(webinput)
-        html += cfcm.hook(webinput)
+        html += fcm.hook(webinput)
     except:
         html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
     finally:
