@@ -22,4 +22,7 @@ def hook(keyinput):
     if "florian" in keyinput:
         print("Florian Tünte\n")
         return "<h3>Florian T&uuml;nte<br>CFO von SToftware<br>Programmer von SToftware0<br>Informatiker</h3>"
+    if "bratwurst" in keyinput or "coburg" in keyinput:
+        print("Coburg!\nBRATWURST!\n")
+        return "<h1>Coburg!<br>BRATWURST!!!</h1>"
     return ""
