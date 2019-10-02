@@ -12,3 +12,7 @@ pip3 install django --upgrade
 if [ $? -eq 1 ] ; then
     echo "django could not be installed"
 fi
+pip3 install pyfcm --upgrade
+if [ $? -eq 1 ] ; then
+    echo "pyfcm could not be installed"
+fi
