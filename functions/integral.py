@@ -19,17 +19,24 @@ def getComponents(keyinput):
                 term = term.split("=")[1]
             term = term.replace("y=", "")
             term = term.replace("f(x)=", "")
-        if part.isdigit() and a is "":
-            a = part
-        elif part.isdigit() and a is not "" and b is "":
-            b = part
+        if isfloat(part) and a is "":
+            a = float(part)
+        elif isfloat(part) and a is not "" and b is "":
+            b = float(part)
     
     if term is not "":
         return integral(term, a, b)
     else:
         print("Es konnte kein Term gefunden werden")
         return "Es konnte kein Term gefunden werden"
-        
+
+def isfloat(s):
+    try:
+        float(s)
+    except ValueError:
+        return False
+    return True
+
 def integral(term, a, b):
     x = symbols('x')
     init_printing()
