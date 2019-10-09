@@ -26,6 +26,7 @@ def index(request):
     webinput = webinput.replace("y=", "")
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     try:
+        html += fcm.hook(webinput)
         html += simple.hook(webinput)
         html += plot.hook(webinput)
         html += discussion.hook(webinput)
@@ -42,7 +43,6 @@ def index(request):
         html += weather.hook(webinput)
         html += binomial.hook(webinput)
         html += chessproblem.hook(webinput)
-        html += fcm.hook(webinput)
     except:
         html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
     finally:

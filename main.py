@@ -29,6 +29,7 @@ def main():
     keyinput = keyinput.replace("f(x)=", "")
     keyinput = keyinput.replace("y=", "")
     try:
+        fcm.hook(keyinput)
         simple.hook(keyinput)
         discussion.hook(keyinput)
         eastereggs.hook(keyinput)
@@ -45,7 +46,6 @@ def main():
         weather.hook(keyinput)
         binomial.hook(keyinput)
         chessproblem.hook(keyinput)
-        fcm.hook(keyinput)
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
