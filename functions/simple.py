@@ -13,7 +13,7 @@ def getComponents(keyinput):
         
         parts = keyinput.split(' ')
         for part in parts:
-            if "*" in part or "+" in part or "/" in part or "-" in part or "sin" in part or "cos" in part or "tan" in part or "exp" in part or "sqrt" in part or "pi" in part or "ln" in part or "log" in part or part is "x":
+            if "*" in part or "+" in part or "/" in part  or "sin" in part or "cos" in part or "tan" in part or "exp" in part or "sqrt" in part or "pi" in part or "ln" in part or "log" in part or part is "x":
                 term = part
 
         if term is not "":

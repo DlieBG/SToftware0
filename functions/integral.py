@@ -15,10 +15,6 @@ def getComponents(keyinput):
     for part in parts:
         if "x" in part:
             term = part
-            if "=" in term:
-                term = term.split("=")[1]
-            term = term.replace("y=", "")
-            term = term.replace("f(x)=", "")
         if isfloat(part) and a is "":
             a = float(part)
         elif isfloat(part) and a is not "" and b is "":
@@ -38,6 +34,8 @@ def isfloat(s):
     return True
 
 def integral(term, a, b):
+    a=float(a)
+    b=float(b)
     x = symbols('x')
     init_printing()
     if a is "" or b is "":
@@ -48,8 +46,8 @@ def integral(term, a, b):
 
 def output(out, term, a, b):
     if a is "" or b is "":
-        print("\nDie Stammfunktion von "+term+" ist: \n"+str(out)+"+c")
+        print("\nDie Stammfunktion von "+str(term)+" ist: \n"+str(out)+"+c")
         return "\nStammfunktion: $$"+str(latex(out))+"+c$$"
     else:
-        print("\nDas Integral von "+term+", im Bereich von "+a+" bis "+b+" ist: \n"+str(out))
-        return "\nIntegral von "+a+" bis "+b+": $$"+str(latex(out))+"$$"
+        print("\nDas Integral von "+str(term)+", im Bereich von "+str(a)+" bis "+str(b)+" ist: \n"+str(out))
+        return "\nIntegral von "+str(a)+" bis "+str(b)+": $$"+str(latex(out))+"$$"
