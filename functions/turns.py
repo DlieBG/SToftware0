@@ -14,8 +14,6 @@ def getComponents(keyinput):
     for part in parts:
         if "x" in part and "maxima" not in part:
             term = part
-            if "=" in term:
-                term = term.split("=")[1]
 
     if term is not "":
         return turns(term)

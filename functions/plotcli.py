@@ -16,8 +16,6 @@ def getComponents(keyinput):
     for part in parts:
         if "x" in part:
             term = part
-            if "=" in term:
-                term = term.split("=")[1]
         
         if isfloat(part) and a is "":
             a = part
