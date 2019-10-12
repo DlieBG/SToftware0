@@ -1,6 +1,8 @@
-from sympy import *
+def hook():
+    return ["hilfe", "chicago", "hello", "there", "exit", "moped", "benedikt", "florian", "bratwurst", "coburg"]
 
-def hook(keyinput):
+
+def getComponents(keyinput):
     if "hilfe" in keyinput or "help" in keyinput or "wiki" in keyinput or keyinput is "":
         print("\nGib eine Aufgabe ein!\n\nBeispiele:\n2. Ableitung von x^2\nGleichung lösen: x^3=21*x\nKurvendiskussion 2*x^3+x^2")
         return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions.html'>"
@@ -16,7 +18,7 @@ def hook(keyinput):
     if "moped" in keyinput:
         print("SOOS!")
         return "<h2>SOOS!</h2>"
-    if "benedikt" in keyinput or "ceo" in keyinput or "programmier" in keyinput or "erfinder" in keyinput or "erfunden" in keyinput or "entwickelt" in keyinput:
+    if "benedikt" in keyinput:
         print("Benedikt Schwering\n")
         return "<h3>Benedikt Schwering<br>CEO von Schwering Software und SToftware<br>Lead Programmer von SToftware0<br>Technischer Informatiker</h3>"
     if "florian" in keyinput:

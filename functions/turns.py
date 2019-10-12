@@ -1,25 +1,14 @@
 from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
-def hook(keyinput):
-    if "wendestelle" in keyinput or "wendepunkt" in keyinput or "wende" in keyinput or "turn" in keyinput:
-        return getComponents(keyinput)
-    return ""
 
-def getComponents(keyinput):
+def hook():
+    return ["wendestelle", "wendepunkt", "wende", "turn"]
 
-    term = ""
 
-    parts = keyinput.split(' ')
-    for part in parts:
-        if "x" in part and "maxima" not in part:
-            term = part
+def getComponents(term):
+    return turns(term)
 
-    if term is not "":
-        return turns(term)
-    else:
-        print("Fehler")
-        return "Fehler"
 
 def turns(term):
     x = symbols('x')
@@ -35,6 +24,7 @@ def turns(term):
         deriv2y.append(deriv2.subs(x,turn))
     return output(turns, turnsy, deriv2y)
 
+
 def output(turns, turnsy, deriv2y):
     texout="\nMögliche Wendestellen: $$x="+str(latex(turns))+"$$"
     print("\nMögliche Wendestellen sind: \nx="+str(turns))
@@ -42,5 +32,5 @@ def output(turns, turnsy, deriv2y):
         print("\nf("+str(turn)+")= "+str(turnsy[turns.index(turn)]))
         print("\nf'''("+str(turn)+")= "+str(deriv2y[turns.index(turn)]))
         texout+="\n$$f("+str(latex(turn))+")= "+str(latex(turnsy[turns.index(turn)]))+"$$"
-        #texout+="\n$$f'''("+str(latex(turn))+")= "+str(latex(deriv2y[turns.index(turn)]))+"$$"
+        texout+="\n$$f'''("+str(latex(turn))+")= "+str(latex(deriv2y[turns.index(turn)]))+"$$"
     return texout

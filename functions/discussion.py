@@ -5,18 +5,20 @@ from functions import extrems
 from functions import turns
 from functions import integral
 
-def hook(keyinput):
-    #Keywords definieren
-    if "kurvendiskussion" in keyinput or "diskussion" in keyinput or "diskutiere" in keyinput or "discuss" in keyinput:
-        return output(keyinput)
-    return ""
 
-def output(keyinput):
-    html = root.getComponents(keyinput)
-    html += derivative.getComponents(keyinput+" 1.")
-    html += derivative.getComponents(keyinput+" 2.")
-    html += extrems.getComponents(keyinput)
-    html += turns.getComponents(keyinput)
-    html += integral.getComponents(keyinput)
-    
+def hook():
+    return ["kurvendiskussion", "diskussion", "diskutiere", "discuss"]
+
+
+def getComponents(term):
+    return output(term)
+
+
+def output(term):
+    html = root.getComponents(term)
+    html += derivative.getComponents(term, [" 1."])
+    html += derivative.getComponents(term, [" 2."])
+    html += extrems.getComponents(term)
+    html += turns.getComponents(term)
+
     return html

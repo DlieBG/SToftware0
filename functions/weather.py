@@ -1,25 +1,11 @@
-from sympy import *
+def hook():
+    return ["wetter"]
 
-def hook(keyinput):
-    if "wetter" in keyinput:
-        return getComponents(keyinput)
-    return ""
 
-def getComponents(keyinput):
+def getComponents(parts):
+    ort = parts[0]
+    return output(ort)
 
-    ort = ""
-
-    parts = keyinput.split(' ')
-    for part in parts:
-        if "wetter" not in part:
-            ort = part.replace("?", "")
-            ort = ort.capitalize()
-
-    if ort is not "": #Abbruchbedingung
-        return output(ort)
-    else:
-        print("Fehler")
-        return "Fehler"
 
 def output(ort):
     print("Wetter für "+ort+" ist nur Online verfügbar.")

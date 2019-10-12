@@ -1,30 +1,23 @@
 from sympy import *
 
-def hook(keyinput):
-    if "stammfunktion" in keyinput or "integral" in keyinput or "aufleitung" in keyinput or "aufleiten" in keyinput:
-        return getComponents(keyinput)
-    return ""
 
-def getComponents(keyinput):
+def hook():
+    return ["stammfunktion", "integral", "aufleitung", "aufleiten", "integrate"]
 
-    term = ""
+
+def getComponents(term, parts):
+
     a = ""
     b = ""
 
-    parts = keyinput.split(' ')
     for part in parts:
-        if "x" in part:
-            term = part
         if isfloat(part) and a is "":
-            a = float(part)
+            a = part
         elif isfloat(part) and a is not "" and b is "":
-            b = float(part)
-    
-    if term is not "":
-        return integral(term, a, b)
-    else:
-        print("Es konnte kein Term gefunden werden")
-        return "Es konnte kein Term gefunden werden"
+            b = part
+
+    return integral(term, a, b)
+
 
 def isfloat(s):
     try:
@@ -33,9 +26,8 @@ def isfloat(s):
         return False
     return True
 
+
 def integral(term, a, b):
-    a=float(a)
-    b=float(b)
     x = symbols('x')
     init_printing()
     if a is "" or b is "":
@@ -43,6 +35,7 @@ def integral(term, a, b):
     else:
         out = integrate(term, (x, a, b))
     return output(out, term, a, b)
+
 
 def output(out, term, a, b):
     if a is "" or b is "":

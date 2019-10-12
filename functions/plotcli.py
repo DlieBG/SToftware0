@@ -1,36 +1,29 @@
 from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
 
-def hook(keyinput):
-    if "plot" in keyinput or "zeichne" in keyinput:
-        return getComponents(keyinput)
-    return ""
 
-def getComponents(keyinput):
+def hook():
+    return ["plot", "zeichne"]
 
-    term = ""
+
+def getComponents(term, parts):
+
     a = ""
     b = ""
 
-    parts = keyinput.split(' ')
     for part in parts:
-        if "x" in part:
-            term = part
-        
         if isfloat(part) and a is "":
             a = part
         elif isfloat(part) and a is not "" and b is "":
             b = part
-    
-    
-    
+
     if term is not "":
         return cligraph(term, a, b)
     else:
         print("Es konnte kein Term gefunden werden")
         return ""
-        
-        
+
+
 def isfloat(s):
     try:
         float(s)
@@ -38,7 +31,8 @@ def isfloat(s):
         return False
     return True
 
-def cligraph(term,a,b):
+
+def cligraph(term, a, b):
     x = symbols('x')
     init_printing(use_unicode=True)
     term=parse_expr(term)
@@ -114,4 +108,3 @@ def output(term,a,b,ymin,ymax,deriv):
         out+=" |~"+str(yvals[10-arry])
         print(out)
     print("von "+str(xvals[0])+" bis "+str(xvals[-1]))
-    

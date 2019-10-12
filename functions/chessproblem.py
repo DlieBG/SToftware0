@@ -2,22 +2,25 @@ from sympy import *
 from fractions import Fraction
 init_printing(use_unicode=True)
 
-def hook(keyinput):
-    #Keywords definieren
-    if "schach" in keyinput:
-        if "king" in keyinput or "koenig" in keyinput:
-            return king()
-        if "queen" in keyinput or "dame" in keyinput:
-            return queen()
-        if "tower" in keyinput or "turm" in keyinput:
-            return tower()
-        if "walker" in keyinput or "lauefer" in keyinput:
-            return walker()
-        if "jumper" in keyinput or "springer" in keyinput:
-            return jumper()
-        return output(keyinput)
-    return ""
-    
+
+def hook():
+    return ["schach", "chess"]
+
+
+def getComponents(parts):
+    if "king" in parts or "koenig" in parts:
+        return king()
+    if "queen" in parts or "dame" in parts:
+        return queen()
+    if "tower" in parts or "turm" in parts:
+        return tower()
+    if "walker" in parts or "lauefer" in parts:
+        return walker()
+    if "jumper" in parts or "springer" in parts:
+        return jumper()
+    return output()
+
+
 V = Matrix([
     [0],
     [0],
@@ -37,6 +40,7 @@ V = Matrix([
     [1],
 ])
 I=eye(16,16)
+
 
 def king():
     MK = Matrix([
@@ -80,7 +84,8 @@ def king():
     MK2=MK2-I
     E=linsolve((MK2,V),(symbols('a')))
     return "Matrix: $$"+latex(MK)+"$$ Stationaere Verteilung: $$"+latex(E)+"$$"
-    
+
+
 def queen():
     MQ = Matrix(
     [
@@ -127,7 +132,8 @@ def queen():
     MQ2=MQ2-I
     E=linsolve((MQ2,V),(symbols('a')))
     return "Matrix: $$"+latex(MQ)+"$$ Stationaere Verteilung: $$"+latex(E)+"$$"
-    
+
+
 def tower():
     MT = Matrix(
     [
@@ -174,7 +180,8 @@ def tower():
     MT2=MT2-I
     E=linsolve((MT2,V),(symbols('a')))
     return "Matrix: $$"+latex(MT)+"$$ Stationaere Verteilung: $$"+latex(E)+"$$"
-    
+
+
 def walker():
     MW = Matrix([
     [0,0,0,0,0,Fraction(1,5),0,0,0,0,Fraction(1,5),0,0,0,0,Fraction(1,3)],
@@ -195,7 +202,8 @@ def walker():
     [Fraction(1,3),0,0,0,0,Fraction(1,5),0,0,0,0,Fraction(1,5),0,0,0,0,0]
     ])
     return "Matrix: $$"+latex(MW)+"$$"
-    
+
+
 def jumper():
     MJ = Matrix([
     [0,0,0,0,0,0,Fraction(1,4),0,0,Fraction(1,4),0,0,0,0,0,0],
@@ -238,8 +246,7 @@ def jumper():
     MJ2=MJ2-I
     E=linsolve((MJ2,V),(symbols('a')))
     return "Matrix: $$"+latex(MJ)+"$$ Stationaere Verteilung: $$"+latex(E)+"$$"
-    
-    
 
-def output(keyinput):
+
+def output():
     return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/chess.html'>"

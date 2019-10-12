@@ -17,32 +17,67 @@ from functions import weather
 from functions import binomial
 from functions import chessproblem
 from functions import fcm
+from expr import *
+
 
 def index(request):
-    webinput = request.POST.get("ST0q", "")
-    webinput = webinput.lower()
-    webinput = webinput.replace("^", "**")
-    webinput = webinput.replace("f(x)=", "")
-    webinput = webinput.replace("y=", "")
+    keyinput = request.POST.get("ST0q", "")
+
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
     try:
-        html += fcm.hook(webinput)
-        html += simple.hook(webinput)
-        html += plot.hook(webinput)
-        html += discussion.hook(webinput)
-        html += eastereggs.hook(webinput)
-        html += derivative.hook(webinput)
-        html += integral.hook(webinput)
-        html += root.hook(webinput)
-        html += extrems.hook(webinput)
-        html += turns.hook(webinput)
-        html += solve.hook(webinput)
-        html += kamel.hook(webinput)
-        html += feedback.hook(webinput)
-        html += polynomial.hook(webinput)
-        html += weather.hook(webinput)
-        html += binomial.hook(webinput)
-        html += chessproblem.hook(webinput)
+        keyinput = clean(keyinput)
+        key, term, parts = splitKandTandP(keyinput)
+        print("key: " + str(key) + "\nterm: " + str(term) + "\n" + str(parts))
+        html += fcm.getComponents(keyinput)
+        if "x" in term:
+            html += plot.getComponents(term)
+        if term is not "":
+            html += simple.getComponents(term)
+
+        html += eastereggs.getComponents(keyinput)
+
+        if key is not "":
+            if term is not "":
+                if key in discussion.hook():
+                    html += discussion.getComponents(term)
+
+                if key in root.hook():
+                    html += root.getComponents(term)
+
+                if key in extrems.hook():
+                    html += extrems.getComponents(term)
+
+                if key in turns.hook():
+                    html += extrems.getComponents(term)
+
+                if key in derivative.hook() and parts is not []:
+                    html += derivative.getComponents(term, parts)
+
+                if key in integral.hook() and parts is not []:
+                    html += integral.getComponents(term, parts)
+
+                if key in solve.hook() and "=" in term:
+                    html += solve.getComponents(term)
+
+
+                if key in polynomial.hook() and "=" in term:
+                    html += polynomial.getComponents(term)
+
+            if key in binomial.hook() and parts is not []:
+                html += binomial.getComponents(parts)
+
+            if key in chessproblem.hook() and parts is not []:
+                html += chessproblem.getComponents(parts)
+
+            # not on cmd line
+            if key in kamel.hook():
+                html += kamel.getComponents()
+
+            if key in feedback.hook():
+                html += feedback.getComponents()
+
+            if key in weather.hook():
+                html += weather.getComponents(parts)
     except:
         html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
     finally:

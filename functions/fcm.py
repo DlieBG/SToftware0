@@ -1,19 +1,14 @@
 from sympy import *
 from pyfcm import FCMNotification
 
-def hook(keyinput):
-    #Keywords definieren
-    if True:
-        return getComponents(keyinput)
-    return ""
+
+def hook():
+    return []
+
 
 def getComponents(keyinput):
+    return send(keyinput)
 
-    if  True: #Abbruchbedingung
-        return send(keyinput)
-    else:
-        print("Fehler")
-        return "Fehler"
 
 def send(keyinput):
     

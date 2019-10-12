@@ -1,26 +1,16 @@
 from sympy import *
 
 def hook(keyinput):
-    #Keywords definieren
-    if "" in keyinput
-        return getComponents(keyinput)
-    return ""
+    #Keywords zurückgeben
+    return ["keyword 1", "keyword2"]
 
-def getComponents(keyinput):
+def getComponents(term, parts):
 
-    #Variablen
+    # bearbeitung der parts
 
-    parts = keyinput.split(' ')
-    for part in parts:
-        #Teile den Variablen zuordnen
+    return functionX(term, whatever)
 
-    if  is not "": #Abbruchbedingung
-        return functionX()
-    else:
-        print("Fehler")
-        return "Fehler"
-
-def functionX():
+def functionX(term, whatever):
     #Berechnung der
     return output(out, term)
 
