@@ -34,8 +34,6 @@ def isfloat(s):
     return True
 
 def integral(term, a, b):
-    a=float(a)
-    b=float(b)
     x = symbols('x')
     init_printing()
     if a is "" or b is "":
