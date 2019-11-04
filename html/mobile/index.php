@@ -41,7 +41,7 @@ fclose($datei);
 
 $server = [
   ['Schwering Software', 'http://benedikt-schwering.de:443/call/'],
-  ['localhost', 'http://benedikt-schwering.de:8080/call/']
+  ['Boba2Fett', 'http://boba2fett.myonlineportal.org:443/call/']
 ];
 
 $serverURL = $server[0][1];
