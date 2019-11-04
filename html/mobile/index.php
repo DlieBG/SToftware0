@@ -41,7 +41,7 @@ fclose($datei);
 
 $server = [
   ['Schwering Software', 'http://benedikt-schwering.de:443/call/'],
-  ['Tünte', 'asd']
+  ['localhost', 'http://benedikt-schwering.de:8080/call/']
 ];
 
 $serverURL = $server[0][1];
@@ -98,7 +98,7 @@ if(isset($_POST['server']))
         <p>
           <div class="row">
             <div class="input-field col s10">
-              <form id="form" method="POST" action="" autocomplete="off" target="iframe">
+              <form id="form" method="POST" action="<?php echo($server[$i][1]); ?>" autocomplete="off" target="iframe">
                   <!--<input value="" id="input" type="text" autocomplete="false" name="ST0q">-->
                   <input id="input" class="materialize-textarea" name="ST0q" rows="1"></input>
                   <label class="active" for="input">Eingabe</label>
