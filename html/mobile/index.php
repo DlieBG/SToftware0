@@ -38,7 +38,20 @@ if($write_header) {
 
 fputs($datei,$eintrag."\n");
 fclose($datei);
+
+$server = [
+  ['Schwering Software', 'http://benedikt-schwering.de:443/call/'],
+  ['Tünte', 'asd']
+];
+
+$serverURL = $server[0][1];
+if(isset($_POST['server']))
+  $serverURL = $server[$_POST['server']][1];
+
 ?>
+
+
+
   <html>
     <head>
       <!--Import Google Icon Font-->
@@ -78,25 +91,51 @@ fclose($datei);
             </ul>
             <a href="" class="brand-logo center">SToftware0</a>
             <ul class="right">
-              <!--<li><a href="https://www.paypal.me/DlieBG/5"><i class="material-icons">euro_symbol</i></a></li>-->
-              <li><a onclick="document.getElementById('input').value='bewertung';document.getElementById('form').submit()"><i class="material-icons">star</i></a></li>
+              <li><a href="https://www.paypal.me/DlieBG/5"><i class="material-icons">euro_symbol</i></a></li>
             </ul>
           </div>
         </nav>
         <p>
           <div class="row">
-            <div class="input-field col s12">
-              <form id="form" method="POST" action="http://benedikt-schwering.de:443/call/" autocomplete="off" target="iframe">
+            <div class="input-field col s10">
+              <form id="form" method="POST" action="" autocomplete="off" target="iframe">
                   <!--<input value="" id="input" type="text" autocomplete="false" name="ST0q">-->
                   <input id="input" class="materialize-textarea" name="ST0q" rows="1"></input>
                   <label class="active" for="input">Eingabe</label>
               </form>
             </div>
+              <div class="input-field col s2">
+              <form method="POST" action="">
+                <select name="server" onchange="this.form.submit()">
+                  <optgroup label="Offiziell">
+                  <?php
+                      for($i=0;$i<sizeof($server);$i++)
+                      {
+                        if($_POST['server']==$i)
+                        {
+                        ?>
+                          <option selected value="<?php print($i) ?>"> <?php echo($server[$i][0]); ?> </option>
+                        <?php
+                        }
+                        else
+                        {
+                          ?>
+                          <option value="<?php print($i) ?>"> <?php echo($server[$i][0]); ?> </option>
+                        <?php
+                        }
+                      }
+
+                    ?>
+                  </optgroup>
+                </select>
+                <label>Server</label>
+                </form>
+              </div>
           </div>
         </p>
   </div>
   <div id="body">
-        <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 186px); border: none;" src="http://benedikt-schwering.de:443/call/?ST0q="></iframe>
+        <iframe id="iframe" name="iframe" style="width:100vw; height:calc(100vh - 186px); border: none;" src="<?php print($serverURL); ?>"></iframe>
   </div>
   <div id="footer" style="position:fixed;bottom:0;width:100%;height:32px;">
     SToftware0 by Benedikt Schwering & Florian T&uuml;nte
@@ -153,6 +192,9 @@ fclose($datei);
         document.getElementById("input").value = document.getElementById("input").value.replace("Ö", "Oe");
       }
 
+      $(document).ready(function() {
+    $('select').material_select();
+  });
       </script>
     </body>
   </html>
