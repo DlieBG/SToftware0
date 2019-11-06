@@ -11,6 +11,7 @@ from functions import discussion
 from functions import turns
 from functions import plot
 from functions import kamel
+from functions import dromedar
 from functions import feedback
 from functions import polynomial
 from functions import weather
@@ -38,6 +39,7 @@ def index(request):
         html += turns.hook(webinput)
         html += solve.hook(webinput)
         html += kamel.hook(webinput)
+        html += dromedar.hook(webinput)
         html += feedback.hook(webinput)
         html += polynomial.hook(webinput)
         html += weather.hook(webinput)
