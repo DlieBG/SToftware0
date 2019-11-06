@@ -25,6 +25,6 @@ def send(keyinput):
                         ]
     message_title = "SToftware0 Call"
     message_body = keyinput
-    result = push_service.notify_multiple_devices(registration_ids=registration_ids, message_title=message_title, message_body=message_body)
+    #result = push_service.notify_multiple_devices(registration_ids=registration_ids, message_title=message_title, message_body=message_body)
 
     return ""
