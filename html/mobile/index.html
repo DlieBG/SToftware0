@@ -22,10 +22,10 @@ background-color: black;
 
         <title>SToftware0 - Intelligentes Mathematiktool</title>
 
-      <meta http-equiv='refresh' content='5; URL=index.php'>
+      
 </head>
 <body>
-<video id="video" width="100%" autoplay muted onload="check();" onended="window.location.href = 'index.php';">
+<video id="video" width="100%" height="100%" autoplay muted onload="check();" onended="logging();">
   <source src="SoftwareShort.mp4" type="video/mp4">
 </video>
 </body>
@@ -33,10 +33,36 @@ background-color: black;
 function check() {
     setTimeout(function () {
         if(!document.getElementById("video").playing)
-          window.location.href = "index.php";
+          logging();
         else
           check();
     }, 2000);
-}
+};
+function logging()
+{
+    post("index.php", { screenX: screen.width, screenY:screen.height, windowX:window.innerWidth, windowY: window.innerHeight});
+    //window.location.href = "index.php";
+};
+
+function post(path, params, method="post") 
+{
+  // The rest of this code assumes you are not using a library.
+  // It can be made less wordy if you use one.
+  const form = document.createElement("form");
+  form.method = method;
+  form.action = path;
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      const hiddenField = document.createElement("input");
+      hiddenField.type = "hidden";
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+
+      form.appendChild(hiddenField);
+    }
+  }
+  document.body.appendChild(form);
+  form.submit();
+};
 </script>
 </html>
