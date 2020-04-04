@@ -48,7 +48,7 @@ fputs($datei,$eintrag."\n");
 fclose($datei);
 
 $server = [
-  ['Schwering Software', 'http://benedikt-schwering.de:481/call/'],
+  ['Schwering Software', 'https://benedikt-schwering.de/SToftware0/html/mobile/call.php?url=localhost:481/call/'],
   ['Boba2Fett', 'http://boba2fett.myonlineportal.org:443/call/']
 ];
 
