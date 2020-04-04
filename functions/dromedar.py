@@ -8,4 +8,4 @@ def hook(keyinput):
 
 def output(keyinput):
     print("Dromedarrechner ist nur Online verfügbar!")
-    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/html/mobile/functions/dromedar.html'>"
+    return "<meta http-equiv='refresh' content='0; URL=https://benedikt-schwering.de/SToftware0/html/mobile/functions/dromedar.html'>"
