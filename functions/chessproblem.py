@@ -15,7 +15,6 @@ def hook(keyinput):
             return walker()
         if "jumper" in keyinput or "springer" in keyinput:
             return jumper()
-        return output(keyinput)
     return ""
     
 V = Matrix([
@@ -238,8 +237,3 @@ def jumper():
     MJ2=MJ2-I
     E=linsolve((MJ2,V),(symbols('a')))
     return "Matrix: $$"+latex(MJ)+"$$ Stationaere Verteilung: $$"+latex(E)+"$$"
-    
-    
-
-def output(keyinput):
-    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/chess.html'>"
