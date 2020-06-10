@@ -1,6 +1,6 @@
 from sympy import *
 from sympy.parsing.sympy_parser import parse_expr
-from functions import *
+from functionallity import *
 
 keywords=[]
 

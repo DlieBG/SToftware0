@@ -1,9 +1,9 @@
 from sympy import *
-from functions import root
-from functions import derivative
-from functions import extrems
-from functions import turns
-from functions import integral
+from functionallity import root
+from functionallity import derivative
+from functionallity import extrems
+from functionallity import turns
+from functionallity import integral
 
 
 def hook():
