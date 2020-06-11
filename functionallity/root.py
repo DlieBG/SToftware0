@@ -19,5 +19,5 @@ def findroots(term):
 
 
 def output(out, term):
-    print("\nDie Nullstellen von "+term+" sind: \nx="+str(out))
+    print("Die Nullstellen von "+term+" sind: \nx="+str(out))
     return "\nNullstellen: $$x="+str(latex(out))+"$$"

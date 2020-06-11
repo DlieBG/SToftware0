@@ -2,7 +2,7 @@ from sympy import *
 
 
 def hook():
-    return ["ableitung", "ableiten", "derivative"]
+    return ["ableitung", "ableiten", "derivative","derivate"]
 
 def needsterm():
     return True
@@ -27,5 +27,5 @@ def derivative(term, level):
 
 
 def output(out, term, level):
-    print("\nDie "+str(level)+". Ableitung von "+str(term)+" ist: \n"+str(out))
+    print("Die "+str(level)+". Ableitung von "+str(term)+" ist: \n"+str(out))
     return "\n"+str(level)+". Ableitung: $$"+str(latex(out))+"$$"

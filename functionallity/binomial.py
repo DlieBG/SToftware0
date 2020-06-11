@@ -3,7 +3,7 @@ from sympy import binomial
 
 
 def hook():
-    return ["ueber"]
+    return ["ueber","über"]
 
 def needsterm():
     return False
@@ -30,5 +30,5 @@ def nueK(n, k):
 
 
 def output(out, n, k):
-    print("\n"+str(n)+" über "+str(k)+" ist: \n"+str(out))
+    print(""+str(n)+" über "+str(k)+" ist: \n"+str(out))
     return "\nEingabe: $${"+str(n)+"\\choose "+str(k)+"}$$\nBinomialverteilung: $$"+str(latex(out))+"$$"

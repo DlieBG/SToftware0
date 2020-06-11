@@ -32,5 +32,5 @@ def polinomdiv(a, b):
 
 
 def output(out, a, b):
-    print("\nPolinomdivision von "+str(a)+"/"+str(b)+" ist: \n"+str(out))
+    print("Polinomdivision von "+str(a)+"/"+str(b)+" ist: \n"+str(out))
     return "\nPolinomdivision: $$"+str(latex(out))+"$$"

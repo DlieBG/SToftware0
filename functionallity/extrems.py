@@ -3,7 +3,7 @@ from sympy.parsing.sympy_parser import parse_expr
 
 
 def hook():
-    return ["extremstellen", "extrempunkte", "maxima", "minima"]
+    return ["extremstellen", "extrempunkte", "maxima", "minima","extrems"]
 
 def needsterm():
     return True
@@ -29,10 +29,11 @@ def extrems(term):
 
 def output(extremes, extremsy, deriv2y):
     texout="\nMögliche Extremstellen: $$x="+str(latex(extremes))+"$$"
-    print("\nMögliche Extremstellen sind: \nx="+str(extremes))
+    print("Mögliche Extremstellen sind: \nx="+str(extremes))
     for extrem in extremes:
-        print("\nf("+str(extrem)+")= "+str(extremsy[extremes.index(extrem)]))
-        print("\nf''("+str(extrem)+")= "+str(deriv2y[extremes.index(extrem)]))
+        print("x="+str(extrem))
+        print("f("+str(extrem)+")= "+str(extremsy[extremes.index(extrem)]))
+        print("f''("+str(extrem)+")= "+str(deriv2y[extremes.index(extrem)]))
         texout += "\n$$f("+str(latex(extrem))+")= "+str(latex(extremsy[extremes.index(extrem)]))+"$$"
         texout += "\n$$f''("+str(latex(extrem))+")= "+str(latex(deriv2y[extremes.index(extrem)]))+"$$"
     return texout

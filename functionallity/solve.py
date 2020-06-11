@@ -3,7 +3,7 @@ from sympy.parsing.sympy_parser import parse_expr
 
 
 def hook():
-    return ["loese", "gleichung", "solve", "solver"]
+    return ["loese", "gleichung", "solve", "solver","löse"]
 
 def needsterm():
     return True
@@ -27,5 +27,5 @@ def solves(term, left, right):
 
 
 def output(out, term):
-    print("\nDie Lösungsmenge des Terms "+str(term)+" ist: \nx="+str(out))
+    print("Die Lösungsmenge des Terms "+str(term)+" ist: \nx="+str(out))
     return "\nLösungsmenge: $$x="+str(latex(out))+"$$"
