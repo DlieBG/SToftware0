@@ -4,6 +4,9 @@ def hook(keyinput):
     #Keywords zurückgeben
     return ["keyword 1", "keyword2"]
 
+def needsterm():
+    return False
+
 def getComponents(term, parts):
 
     # bearbeitung der parts

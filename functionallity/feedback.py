@@ -1,8 +1,10 @@
 def hook():
     return ["feedback", "bewertung", "rezension", "fehler"]
 
+def needsterm():
+    return False
 
-def getComponents():
+def getComponents(ignore):
     output()
 
 

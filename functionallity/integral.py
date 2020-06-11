@@ -4,6 +4,8 @@ from sympy import *
 def hook():
     return ["stammfunktion", "integral", "aufleitung", "aufleiten", "integrate"]
 
+def needsterm():
+    return True
 
 def getComponents(term, parts):
 

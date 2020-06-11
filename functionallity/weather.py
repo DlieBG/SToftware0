@@ -1,6 +1,8 @@
 def hook():
     return ["wetter"]
 
+def needsterm():
+    return False
 
 def getComponents(parts):
     ort = parts[0]

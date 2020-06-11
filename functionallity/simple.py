@@ -5,8 +5,10 @@ from sympy.parsing.sympy_parser import parse_expr
 def hook():
     return []
 
+def needsterm():
+    return True
 
-def getComponents(term):
+def getComponents(term,parts):
 
     if "=" not in term:
         return simple(term)

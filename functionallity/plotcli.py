@@ -5,6 +5,8 @@ from sympy.parsing.sympy_parser import parse_expr
 def hook():
     return ["plot", "zeichne"]
 
+def needsterm():
+    return True
 
 def getComponents(term, parts):
 

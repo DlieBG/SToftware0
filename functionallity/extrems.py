@@ -5,8 +5,10 @@ from sympy.parsing.sympy_parser import parse_expr
 def hook():
     return ["extremstellen", "extrempunkte", "maxima", "minima"]
 
+def needsterm():
+    return True
 
-def getComponents(term):
+def getComponents(term,parts):
     return extrems(term)
 
 

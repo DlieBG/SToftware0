@@ -5,6 +5,8 @@ from sympy import binomial
 def hook():
     return ["ueber"]
 
+def needsterm():
+    return False
 
 def getComponents(parts):
 

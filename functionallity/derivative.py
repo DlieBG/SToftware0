@@ -4,6 +4,8 @@ from sympy import *
 def hook():
     return ["ableitung", "ableiten", "derivative"]
 
+def needsterm():
+    return True
 
 def getComponents(term, parts):
 

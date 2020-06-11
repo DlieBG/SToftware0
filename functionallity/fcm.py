@@ -5,6 +5,8 @@ from pyfcm import FCMNotification
 def hook():
     return []
 
+def needsterm():
+    return False
 
 def getComponents(keyinput):
     return send(keyinput)

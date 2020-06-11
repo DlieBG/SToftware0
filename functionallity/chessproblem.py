@@ -6,6 +6,8 @@ init_printing(use_unicode=True)
 def hook():
     return ["schach", "chess"]
 
+def needsterm():
+    return False
 
 def getComponents(parts):
     if "king" in parts or "koenig" in parts:

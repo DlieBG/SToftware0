@@ -1,8 +1,10 @@
 def hook():
     return []
 
+def needsterm():
+    return True
 
-def getComponents(term):
+def getComponents(term,parts):
     return output(term)
 
 

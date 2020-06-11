@@ -5,8 +5,10 @@ from sympy.parsing.sympy_parser import parse_expr
 def hook():
     return ["wendestelle", "wendepunkt", "wende", "turn"]
 
+def needsterm():
+    return True
 
-def getComponents(term):
+def getComponents(term,parts):
     return turns(term)
 
 

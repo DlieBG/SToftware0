@@ -4,6 +4,8 @@ from sympy import *
 def hook():
     return ["polinomdivision", "polinomdividi"]
 
+def needsterm():
+    return False
 
 def getComponents(parts):
 
