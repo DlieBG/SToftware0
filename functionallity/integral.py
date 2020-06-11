@@ -40,7 +40,7 @@ def integral(term, a, b):
 
 
 def output(out, term, a, b):
-    if a is "" or b is "":
+    if a == "" or b == "":
         print("Die Stammfunktion von "+str(term)+" ist: \n"+str(out)+"+c")
         return "\nStammfunktion: $$"+str(latex(out))+"+c$$"
     else:

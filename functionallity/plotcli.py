@@ -14,12 +14,12 @@ def getComponents(term, parts):
     b = ""
 
     for part in parts:
-        if isfloat(part) and a is "":
+        if isfloat(part) and a == "":
             a = part
-        elif isfloat(part) and a is not "" and b is "":
+        elif isfloat(part) and a != "" and b == "":
             b = part
 
-    if term is not "":
+    if term != "":
         return cligraph(term, a, b)
     else:
         print("Es konnte kein Term gefunden werden")
@@ -39,23 +39,23 @@ def cligraph(term, a, b):
     init_printing(use_unicode=True)
     term=parse_expr(term)
     
-    if a is not "":
+    if a != "":
         a=float(a)
        
-    if b is not "":
+    if b != "":
         b=float(b)
         
-    if a is "" and b is "":
+    if a == "" and b == "":
         a=-10
         b=10
-    if a is "":
+    if a == "":
         a=b-20
-    if b is "":#just in case
+    if b == "": # just in case
         b=a+20
     ymax=Max(term.subs(x,a),term.subs(x,b))
     ymin=Min(term.subs(x,a),term.subs(x,b))
     
-    #max min
+    # max min
     deriv = diff(term, x, 1)
     extremes = solve(deriv, x)
     for extrem in extremes:
