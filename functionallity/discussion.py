@@ -1,4 +1,3 @@
-from sympy import *
 from functionallity import root
 from functionallity import derivative
 from functionallity import extrems

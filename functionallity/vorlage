@@ -1,21 +1,21 @@
-from sympy import *
+from sympy import * # not necessary, but mostly needed
 
 def hook(keyinput):
-    #Keywords zurückgeben
+    # return the keywords this module should react to
     return ["keyword 1", "keyword2"]
 
-def needsterm():
+def needsterm(): # return if term is needed in getComponents
     return True
 
 def getComponents(term, parts):
 
-    # bearbeitung der parts
+    # processing
 
     return functionX(term, whatever)
 
 def functionX(term, whatever):
-    #Berechnung der
+    # whatever this module is made for
     return output(out, term)
 
 def output(out, term):
-    #Ausgabe der Werte
+    #output to cli and return to html

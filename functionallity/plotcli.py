@@ -50,7 +50,7 @@ def cligraph(term, a, b):
         b=10
     if a is "":
         a=b-20
-    if b is "":
+    if b is "":#just in case
         b=a+20
     ymax=Max(term.subs(x,a),term.subs(x,b))
     ymin=Min(term.subs(x,a),term.subs(x,b))

@@ -1,4 +1,3 @@
-from sympy import *
 from pyfcm import FCMNotification
 
 
