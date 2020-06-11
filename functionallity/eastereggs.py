@@ -1,5 +1,6 @@
 def hook():
-    return ["hilfe", "chicago", "hello", "there", "exit", "moped", "benedikt", "florian", "bratwurst", "coburg"]
+    return []
+    #return ["hilfe", "chicago", "hello", "there", "exit", "moped", "benedikt", "florian", "bratwurst", "coburg"]
 
 def needsterm():
     return False

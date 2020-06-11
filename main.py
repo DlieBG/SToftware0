@@ -62,12 +62,11 @@ class ST0Prompt(Cmd):
                     getattr(funct, modu).getComponents(term,parts)
             
             else:
-                if modu=="eastereggs":
-                    inp=" ".join(inp)
-                    funct.eastereggs.getComponents(inp)
-                else:
-                    parts=inp[1::]
-                    getattr(funct, modu).getComponents(parts)
+                parts=inp[1::]
+                getattr(funct, modu).getComponents(parts)
+        
+        inp=" ".join(inp)
+        funct.eastereggs.getComponents(inp)
 
 
     def completedefault(self, text, line, begidx, endidx):
@@ -81,6 +80,7 @@ class ST0Prompt(Cmd):
         funcHooks = [item for sublist in funcHooks for item in sublist]
         #print(funcHooks)
         funcHooks=list(filter(None,funcHooks))
+        funcHooks=list(filter(lambda  x: x.startswith(text),funcHooks))
         return docmds+funcHooks
         
     def do_exit(self, inp):
