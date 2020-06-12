@@ -1,5 +1,7 @@
 from sympy import *
 from fractions import Fraction
+
+
 init_printing(use_unicode=True)
 
 

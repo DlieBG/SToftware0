@@ -1,8 +1,4 @@
-from functionallity import root
-from functionallity import derivative
-from functionallity import extrems
-from functionallity import turns
-from functionallity import integral
+from functionallity import derivative, extrems, integral, root, turns
 
 
 def hook():

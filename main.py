@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-import sys, os
-from cmd import Cmd
-from colorama import Fore, Back, Style
 import datetime
-
+import os
+import sys
 import types
-import functionallity as funct
+from cmd import Cmd
 
 import regex
+from colorama import Back, Fore, Style
+
+import functionallity as funct
 from expr import *
 
 
@@ -76,9 +77,7 @@ class ST0Prompt(Cmd):
         dotext = 'do_'+text
         docmds = [a[3:] for a in self.get_names() if a.startswith(dotext)]
         funcHooks=[getattr(funct, module).hook() for module in funct.__all__]
-        #print(funcHooks)
         funcHooks = [item for sublist in funcHooks for item in sublist]
-        #print(funcHooks)
         funcHooks=list(filter(None,funcHooks))
         funcHooks=list(filter(lambda  x: x.startswith(text),funcHooks))
         return docmds+funcHooks
@@ -92,8 +91,6 @@ class ST0Prompt(Cmd):
         print(funct.__all__)
         for module in funct.__all__:
             print(getattr(funct, module).hook())
-        #print(dir(functions))
-        #print([getattr(functions, a) for a in dir(functions) if isinstance(getattr(functions, a), types.ModuleType)])
 
     do_EOF = do_exit
 
