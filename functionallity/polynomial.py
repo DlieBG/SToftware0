@@ -19,7 +19,7 @@ def getComponents(parts):
             a = part.split("/")[0]
             b = part.split("/")[1]
 
-    if a is not "" and b is not "":
+    if a != "" and b != "":
         return polinomdiv(a, b)
     else:
         print("Fehler")

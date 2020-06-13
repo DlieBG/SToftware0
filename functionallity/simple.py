@@ -18,7 +18,7 @@ def getComponents(term, parts):
         left = term.split("=")[0]
         right = term.split("=")[1]
 
-        if term is not "" and left is not "" and right is not "":
+        if term != "" and left != "" and right != "":
             return simpleEq(left, right)
         else:
             print("Fehler")

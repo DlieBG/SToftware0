@@ -32,4 +32,4 @@ def getComponents(keyinput):
     if "bratwurst" in keyinput or "coburg" in keyinput:
         print("Coburg!\nBRATWURST!\n")
         return "<h1>Coburg!<br>BRATWURST!!!</h1>"
-    return ""
+    return "<h1>Nichts zu Tun gefunden</h1>"

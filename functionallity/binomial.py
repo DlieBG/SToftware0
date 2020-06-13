@@ -17,12 +17,12 @@ def getComponents(parts):
 
     for part in parts:
         if part.isdigit():
-            if n is -1:
+            if n == -1:
                 n = int(part)
-            elif k is -1:
+            elif k == -1:
                 k = int(part)
 
-    if k is not -1 and n is not -1:
+    if k != -1 and n != -1:
         return nueK(n, k)
 
 

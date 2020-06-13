@@ -38,7 +38,7 @@ class ST0Prompt(Cmd):
             if isTerm(inp[0]):
                 funct.simple.getComponents(inp[0], list())
         else:
-            for module in funct.__all__:
+            for module in funct.__allcli__:
                 if inp[0] in getattr(funct, module).hook():
                     modu = module
                     break
@@ -76,7 +76,7 @@ class ST0Prompt(Cmd):
     def completenames(self, text, *ignored):
         dotext = 'do_'+text
         docmds = [a[3:] for a in self.get_names() if a.startswith(dotext)]
-        funcHooks = [getattr(funct, module).hook() for module in funct.__all__]
+        funcHooks = [getattr(funct, module).hook() for module in funct.__allcli__]
         funcHooks = [item for sublist in funcHooks for item in sublist]
         funcHooks = list(filter(None, funcHooks))
         funcHooks = list(filter(lambda x: x.startswith(text), funcHooks))
@@ -88,8 +88,8 @@ class ST0Prompt(Cmd):
         return True
 
     def do_test(self, inp):
-        print(funct.__all__)
-        for module in funct.__all__:
+        print(funct.__allcli__)
+        for module in funct.__allcli__:
             print(getattr(funct, module).hook())
 
     do_EOF = do_exit

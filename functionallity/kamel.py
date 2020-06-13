@@ -7,9 +7,9 @@ def needsterm():
 
 
 def getComponents(ignore):
-    output()
+    return output()
 
 
 def output():
     print("Kamelrechner ist nur Online verfügbar!")
-    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/kamel.html'>"
+    return "<meta http-equiv='refresh' content='0; URL=https://benedikt-schwering.de/SToftware0/html/mobile/functions/kamel.html'>"

@@ -1,84 +1,59 @@
 from django.http import HttpResponse
 
-from functions import eastereggs
-from functions import derivative
-from functions import integral
-from functions import root
-from functions import solve
-from functions import extrems
-from functions import simple
-from functions import discussion
-from functions import turns
-from functions import plot
-from functions import kamel
-from functions import feedback
-from functions import polynomial
-from functions import weather
-from functions import binomial
-from functions import chessproblem
-from functions import fcm
+import regex
+import functionallity as funct
 from expr import *
+
+def process(inp):
+    inp = clean(inp)
+    inp = inp.strip()
+    inp = regex.split("\s+", inp, flags=regex.UNICODE)
+    modu = "simple"
+    if len(inp) == 0:
+        pass
+    elif len(inp) == 1:
+        if inp[0] not in funct.__allweb__ and isTerm(inp[0]):
+            return funct.simple.getComponents(inp[0], list())
+    for module in funct.__allweb__:
+        if inp[0] in getattr(funct, module).hook():
+            modu = module
+            break
+    if getattr(funct, modu).needsterm():
+        term = None  # find term
+        termi = None
+        for i in range(1, len(inp)):
+            if isTerm(inp[i]):
+                if not term:
+                    term = inp[i]
+                    termi = i
+                # maybe first parseble argument is term always
+                elif "x" in inp[i] and "x" not in term:
+                    term = inp[i]
+                    termi = i
+        if not term:
+            return "<h1>No Term found</h1>"
+        else:
+            parts = list()
+            for i in range(1, len(inp)):
+                if i != termi:
+                    parts.append(inp[i])
+            return getattr(funct, modu).getComponents(term, parts)
+
+    else:
+        parts = inp[1::]
+        return getattr(funct, modu).getComponents(parts)
+
+    inp = " ".join(inp)
+    return funct.eastereggs.getComponents(inp)
 
 
 def index(request):
     keyinput = request.POST.get("ST0q", "")
 
     html = '<script type="text/javascript" async \nsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>'
-    try:
-        keyinput = clean(keyinput)
-        key, term, parts = splitKandTandP(keyinput)
-        print("key: " + str(key) + "\nterm: " + str(term) + "\n" + str(parts))
-        html += fcm.getComponents(keyinput)
-        if "x" in term:
-            html += plot.getComponents(term)
-        if term is not "":
-            html += simple.getComponents(term)
-
-        html += eastereggs.getComponents(keyinput)
-
-        if key is not "":
-            if term is not "":
-                if key in discussion.hook():
-                    html += discussion.getComponents(term)
-
-                if key in root.hook():
-                    html += root.getComponents(term)
-
-                if key in extrems.hook():
-                    html += extrems.getComponents(term)
-
-                if key in turns.hook():
-                    html += extrems.getComponents(term)
-
-                if key in derivative.hook() and parts is not []:
-                    html += derivative.getComponents(term, parts)
-
-                if key in integral.hook() and parts is not []:
-                    html += integral.getComponents(term, parts)
-
-                if key in solve.hook() and "=" in term:
-                    html += solve.getComponents(term)
-
-
-                if key in polynomial.hook() and "=" in term:
-                    html += polynomial.getComponents(term)
-
-            if key in binomial.hook() and parts is not []:
-                html += binomial.getComponents(parts)
-
-            if key in chessproblem.hook() and parts is not []:
-                html += chessproblem.getComponents(parts)
-
-            # not on cmd line
-            if key in kamel.hook():
-                html += kamel.getComponents()
-
-            if key in feedback.hook():
-                html += feedback.getComponents()
-
-            if key in weather.hook():
-                html += weather.getComponents(parts)
-    except:
-        html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
-    finally:
-        return HttpResponse(html)
+    #try:
+    html+=process(keyinput)
+    #except:
+        #html +="<h1>FEHLER</h1> Entweder <h2>DU bist schuld</h2> oder das Programm ist schuld"
+    #finally:
+    return HttpResponse(html)
