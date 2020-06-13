@@ -3,12 +3,14 @@ from sympy.parsing.sympy_parser import parse_expr
 
 
 def hook():
-    return ["loese", "gleichung", "solve", "solver","löse"]
+    return ["loese", "gleichung", "solve", "solver", "löse"]
+
 
 def needsterm():
     return True
 
-def getComponents(term,parts):
+
+def getComponents(term, parts):
     left = term.split("=")[0]
     right = term.split("=")[1]
 

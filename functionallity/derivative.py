@@ -2,10 +2,12 @@ from sympy import *
 
 
 def hook():
-    return ["ableitung", "ableiten", "derivative","derivate"]
+    return ["ableitung", "ableiten", "derivative", "derivate"]
+
 
 def needsterm():
     return True
+
 
 def getComponents(term, parts):
 

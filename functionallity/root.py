@@ -4,10 +4,12 @@ from sympy import *
 def hook():
     return ["nullstelle", "nullstellen", "root", "roots"]
 
+
 def needsterm():
     return True
 
-def getComponents(term,parts):
+
+def getComponents(term, parts):
     return findroots(term)
 
 

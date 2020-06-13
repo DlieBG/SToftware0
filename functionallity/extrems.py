@@ -3,12 +3,14 @@ from sympy.parsing.sympy_parser import parse_expr
 
 
 def hook():
-    return ["extremstellen", "extrempunkte", "maxima", "minima","extrems"]
+    return ["extremstellen", "extrempunkte", "maxima", "minima", "extrems"]
+
 
 def needsterm():
     return True
 
-def getComponents(term,parts):
+
+def getComponents(term, parts):
     return extrems(term)
 
 
@@ -17,23 +19,25 @@ def extrems(term):
     init_printing()
     deriv = diff(term, x, 1)
     extremes = solve(deriv, x)
-    extremsy=[]
+    extremsy = []
     for extrem in extremes:
-        extremsy.append(parse_expr(term).subs(x,extrem))
+        extremsy.append(parse_expr(term).subs(x, extrem))
     deriv2 = diff(term, x, 2)
-    deriv2y=[]
+    deriv2y = []
     for extrem in extremes:
-        deriv2y.append(deriv2.subs(x,extrem))
+        deriv2y.append(deriv2.subs(x, extrem))
     return output(extremes, extremsy, deriv2y)
 
 
 def output(extremes, extremsy, deriv2y):
-    texout="\nMögliche Extremstellen: $$x="+str(latex(extremes))+"$$"
+    texout = "\nMögliche Extremstellen: $$x="+str(latex(extremes))+"$$"
     print("Mögliche Extremstellen sind: \nx="+str(extremes))
     for extrem in extremes:
         print("x="+str(extrem))
         print("f("+str(extrem)+")= "+str(extremsy[extremes.index(extrem)]))
         print("f''("+str(extrem)+")= "+str(deriv2y[extremes.index(extrem)]))
-        texout += "\n$$f("+str(latex(extrem))+")= "+str(latex(extremsy[extremes.index(extrem)]))+"$$"
-        texout += "\n$$f''("+str(latex(extrem))+")= "+str(latex(deriv2y[extremes.index(extrem)]))+"$$"
+        texout += "\n$$f("+str(latex(extrem))+")= " + \
+            str(latex(extremsy[extremes.index(extrem)]))+"$$"
+        texout += "\n$$f''("+str(latex(extrem))+")= " + \
+            str(latex(deriv2y[extremes.index(extrem)]))+"$$"
     return texout

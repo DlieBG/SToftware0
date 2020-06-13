@@ -1,9 +1,11 @@
 def hook():
     return []
-    #return ["hilfe", "chicago", "hello", "there", "exit", "moped", "benedikt", "florian", "bratwurst", "coburg"]
+    # return ["hilfe", "chicago", "hello", "there", "exit", "moped", "benedikt", "florian", "bratwurst", "coburg"]
+
 
 def needsterm():
     return False
+
 
 def getComponents(keyinput):
     if "hilfe" in keyinput or "help" in keyinput or "wiki" in keyinput or keyinput is "":

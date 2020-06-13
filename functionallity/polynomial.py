@@ -4,8 +4,10 @@ from sympy import *
 def hook():
     return ["polinomdivision", "polinomdividi"]
 
+
 def needsterm():
     return False
+
 
 def getComponents(parts):
 
@@ -13,7 +15,7 @@ def getComponents(parts):
     b = ""
 
     for part in parts:
-        if "/" in part:#TODO optimize for / in a or b  Maybe tomorrow XD
+        if "/" in part:  # TODO optimize for / in a or b  Maybe tomorrow XD
             a = part.split("/")[0]
             b = part.split("/")[1]
 

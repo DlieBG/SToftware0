@@ -1,8 +1,10 @@
 def hook():
     return ["kamel"]
 
+
 def needsterm():
     return False
+
 
 def getComponents(ignore):
     output()

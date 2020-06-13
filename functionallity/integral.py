@@ -4,8 +4,10 @@ from sympy import *
 def hook():
     return ["stammfunktion", "integral", "aufleitung", "aufleiten", "integrate"]
 
+
 def needsterm():
     return True
+
 
 def getComponents(term, parts):
 
@@ -44,5 +46,6 @@ def output(out, term, a, b):
         print("Die Stammfunktion von "+str(term)+" ist: \n"+str(out)+"+c")
         return "\nStammfunktion: $$"+str(latex(out))+"+c$$"
     else:
-        print("Das Integral von "+str(term)+", im Bereich von "+str(a)+" bis "+str(b)+" ist: \n"+str(out))
+        print("Das Integral von "+str(term)+", im Bereich von " +
+              str(a)+" bis "+str(b)+" ist: \n"+str(out))
         return "\nIntegral von "+str(a)+" bis "+str(b)+": $$"+str(latex(out))+"$$"

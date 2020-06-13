@@ -5,8 +5,10 @@ from sympy.parsing.sympy_parser import parse_expr
 def hook():
     return ["plot", "zeichne"]
 
+
 def needsterm():
     return True
+
 
 def getComponents(term, parts):
 
@@ -37,76 +39,76 @@ def isfloat(s):
 def cligraph(term, a, b):
     x = symbols('x')
     init_printing(use_unicode=True)
-    term=parse_expr(term)
-    
+    term = parse_expr(term)
+
     if a != "":
-        a=float(a)
-       
+        a = float(a)
+
     if b != "":
-        b=float(b)
-        
+        b = float(b)
+
     if a == "" and b == "":
-        a=-10
-        b=10
+        a = -10
+        b = 10
     if a == "":
-        a=b-20
-    if b == "": # just in case
-        b=a+20
-    ymax=Max(term.subs(x,a),term.subs(x,b))
-    ymin=Min(term.subs(x,a),term.subs(x,b))
-    
+        a = b-20
+    if b == "":  # just in case
+        b = a+20
+    ymax = Max(term.subs(x, a), term.subs(x, b))
+    ymin = Min(term.subs(x, a), term.subs(x, b))
+
     # max min
     deriv = diff(term, x, 1)
     extremes = solve(deriv, x)
     for extrem in extremes:
-        ymax=Max(ymax,term.subs(x,extrem))
-        ymin=Min(ymin,term.subs(x,extrem))
-    
-    return output(term,a,b,ymin,ymax,deriv)
-    
-    
-def output(term,a,b,ymin,ymax,deriv):
+        ymax = Max(ymax, term.subs(x, extrem))
+        ymin = Min(ymin, term.subs(x, extrem))
+
+    return output(term, a, b, ymin, ymax, deriv)
+
+
+def output(term, a, b, ymin, ymax, deriv):
     x = symbols('x')
     init_printing(use_unicode=True)
-    xvals=[]
+    xvals = []
     for n in range(11):
-        xvals.append(a+(b-a)/10*n)#range-1=>10
-        
-    yvals=[]
+        xvals.append(a+(b-a)/10*n)  # range-1=>10
+
+    yvals = []
     for n in range(11):
         yvals.append(ymin+(ymax-ymin)/10*n)
-        
-    marks=[]
-    clisymbols=[]
+
+    marks = []
+    clisymbols = []
     for xcoord in xvals:
-        y=term.subs(x,xcoord)
-        derivy=deriv.subs(x,xcoord)
-        d=0
+        y = term.subs(x, xcoord)
+        derivy = deriv.subs(x, xcoord)
+        d = 0
         for i in range(len(yvals)):
-            if abs(yvals[i]-y)<abs(yvals[d]-y):#what is nearest value
-                d=i
+            if abs(yvals[i]-y) < abs(yvals[d]-y):  # what is nearest value
+                d = i
         marks.append(d)
-        if derivy==0:
+        if derivy == 0:
             clisymbols.append("-")
-        elif Min(derivy,0)==derivy:
+        elif Min(derivy, 0) == derivy:
             clisymbols.append("\\")
-        elif Max(derivy,0)==derivy:
+        elif Max(derivy, 0) == derivy:
             clisymbols.append("/")
-    arr=[]
+    arr = []
     for arrx in range(len(marks)):
         arr.append([])
         for arry in range(11):
-            arry=10-arry
-            if marks[arrx]==arry:
-                #arr[arrx].append("-")
+            arry = 10-arry
+            if marks[arrx] == arry:
+                # arr[arrx].append("-")
                 arr[arrx].append(clisymbols[arrx])
             else:
                 arr[arrx].append(" ")
     print("")
     for arry in range(11):
-        out=""
+        out = ""
         for arrx in range(11):
-            out+=str(arr[arrx][arry])
-        out+=" |~"+str(yvals[10-arry])
+            out += str(arr[arrx][arry])
+        out += " |~"+str(yvals[10-arry])
         print(out)
     print("von "+str(xvals[0])+" bis "+str(xvals[-1]))

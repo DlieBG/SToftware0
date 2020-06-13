@@ -3,10 +3,12 @@ from sympy import binomial
 
 
 def hook():
-    return ["ueber","über"]
+    return ["ueber", "über"]
+
 
 def needsterm():
     return False
+
 
 def getComponents(parts):
 
