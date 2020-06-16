@@ -143,3 +143,4 @@ share/
 pyvenv.cfg
 bin/
 lib64/
+lib64

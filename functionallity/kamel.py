@@ -15,4 +15,4 @@ def getComponents(ignore):
 
 def output():
     print("Kamelrechner ist nur Online verfügbar!")
-    return "<meta http-equiv='refresh' content='0; URL="+BASE_URL+"SToftware0/html/mobile/functions/kamel.html'>"
+    return str("<meta http-equiv='refresh' content='0'; URL='"+BASE_URL+"/SToftware0/html/mobile/functions/kamel.html'>")

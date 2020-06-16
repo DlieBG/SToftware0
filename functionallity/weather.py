@@ -10,8 +10,11 @@ def needsterm():
 
 
 def getComponents(parts):
-    ort = parts[0]
-    return output(ort)
+    if len(parts)>0:
+        ort = parts[0]
+        return output(ort)
+    else:
+        return "<h1>Gib einen Ort an</h1>"
 
 
 def output(ort):
