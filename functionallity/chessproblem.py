@@ -1,6 +1,6 @@
 from sympy import *
 from fractions import Fraction
-
+from expr import BASE_URL
 
 init_printing(use_unicode=True)
 
@@ -253,4 +253,4 @@ def jumper():
 
 
 def output():
-    return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions/chess.html'>"
+    return "<meta http-equiv='refresh' content='0; URL="+BASE_URL+"/SToftware0/html/mobile/functions/chess.html'>"

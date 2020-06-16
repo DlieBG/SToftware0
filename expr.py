@@ -1,6 +1,6 @@
 from sympy.parsing.sympy_parser import parse_expr
-from functionallity import *
 
+BASE_URL="https://b2f.myonlineportal.org"
 
 def isTerm(possibleTerm):
     if "=" not in possibleTerm:

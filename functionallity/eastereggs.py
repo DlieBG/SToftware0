@@ -1,3 +1,6 @@
+from expr import BASE_URL
+
+
 def hook():
     return []
     # return ["hilfe", "chicago", "hello", "there", "exit", "moped", "benedikt", "florian", "bratwurst", "coburg"]
@@ -10,7 +13,7 @@ def needsterm():
 def getComponents(keyinput):
     if "hilfe" in keyinput or "help" in keyinput or "wiki" in keyinput or keyinput is "":
         print("\nGib eine Aufgabe ein!\n\nBeispiele:\n2. Ableitung von x^2\nGleichung lösen: x^3=21*x\nKurvendiskussion 2*x^3+x^2")
-        return "<meta http-equiv='refresh' content='0; URL=http://benedikt-schwering.de/SToftware0/python/SToftware0/html/mobile/functions.html'>"
+        return "<meta http-equiv='refresh' content='0; URL="+BASE_URL+"/SToftware0/html/mobile/functions.html'>"
     if "chicago" in keyinput:
         print("Ich komm immer klar auf n Chicago!")
         return "<h3>Ich komm immer klar auf n Chicago!</h3>"

@@ -9,7 +9,8 @@ import regex
 from colorama import Back, Fore, Style
 
 import functionallity as funct
-from expr import *
+from functionallity import * # loads everything from __all__
+from expr import isTerm, clean
 
 
 asciiflex = """
@@ -30,7 +31,7 @@ class ST0Prompt(Cmd):
     def default(self, inp):
         inp = clean(inp)
         inp = inp.strip()
-        inp = regex.split("\s+", inp, flags=regex.UNICODE)
+        inp = regex.split(r"\s+", inp, flags=regex.UNICODE)
         modu = "simple"
         if len(inp) == 0:
             pass
@@ -89,6 +90,7 @@ class ST0Prompt(Cmd):
 
     def do_test(self, inp):
         print(funct.__allcli__)
+        print(dir(funct))
         for module in funct.__allcli__:
             print(getattr(funct, module).hook())
 

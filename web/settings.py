@@ -25,7 +25,7 @@ SECRET_KEY = 'g1wt*#$j+otj@%(gu86^slktc%)p6_)r+0ogd-!*c=6^afao3p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://benedikt-schwering.de','https://benedikt-schwering.de', 'benedikt-schwering.de', '127.0.0.1', 'localhost', 'http://boba2fett.myonlineportal.org', 'boba2fett.myonlineportal.org', 'https://boba2fett.myonlineportal.org']
+ALLOWED_HOSTS = ['http://benedikt-schwering.de','https://benedikt-schwering.de', 'benedikt-schwering.de', '127.0.0.1', 'localhost', 'http://boba2fett.myonlineportal.org', 'boba2fett.myonlineportal.org', 'https://b2f.myonlineportal.org']
 
 
 # Application definition

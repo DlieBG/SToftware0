@@ -1,3 +1,6 @@
+from expr import BASE_URL
+
+
 def hook():
     return ["plot"]
 
@@ -12,4 +15,4 @@ def getComponents(term, parts):
 
 def output(out):
     print("")
-    return "\n<iframe frameborder='0' scrolling='no' style='width: 98vw; height: 350px' src='https://benedikt-schwering.de//SToftware0/html/mobile/functions/plot/index.html?"+out+"'></iframe><br>"
+    return "\n<iframe frameborder='0' scrolling='no' style='width: 98vw; height: 350px' src='"+BASE_URL+"/SToftware0/html/mobile/functions/plot/index.html?"+out+"'></iframe><br>"

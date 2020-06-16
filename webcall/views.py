@@ -2,6 +2,7 @@ from django.http import HttpResponse
 
 import regex
 import functionallity as funct
+from functionallity import *
 from expr import *
 
 def process(inp):
