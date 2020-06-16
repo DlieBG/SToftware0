@@ -44,25 +44,11 @@ class ST0Prompt(Cmd):
                     modu = module
                     break
             if getattr(funct, modu).needsterm():
-                term = None  # find term
-                termi = None
-                for i in range(1, len(inp)):
-                    if isTerm(inp[i]):
-                        if not term:
-                            term = inp[i]
-                            termi = i
-                        # maybe first parseble argument is term always
-                        elif "x" in inp[i] and "x" not in term:
-                            term = inp[i]
-                            termi = i
-                if not term:
-                    warnmsg("No Term found")
+                if isTerm(inp[1]):
+                    parts = inp[2::]
+                    getattr(funct, modu).getComponents(inp[1], parts)
                 else:
-                    parts = list()
-                    for i in range(1, len(inp)):
-                        if i != termi:
-                            parts.append(inp[i])
-                    getattr(funct, modu).getComponents(term, parts)
+                    print("no Term found")
 
             else:
                 parts = inp[1::]

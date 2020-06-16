@@ -1,5 +1,6 @@
 from sympy import *
-
+from expr import *
+import string
 
 def hook():
     return ["stammfunktion", "integral", "aufleitung", "aufleiten", "integrate"]
@@ -15,24 +16,16 @@ def getComponents(term, parts):
     b = ""
 
     for part in parts:
-        if isfloat(part) and a == "":
+        if isTerm(part) and a == "":
             a = part
-        elif isfloat(part) and a != "" and b == "":
+        elif isTerm(part) and a != "" and b == "":
             b = part
-
+    print(term+a+b)
     return integral(term, a, b)
 
 
-def isfloat(s):
-    try:
-        float(s)
-    except ValueError:
-        return False
-    return True
-
-
 def integral(term, a, b):
-    x = symbols('x')
+    x = symbols(string.ascii_lowercase)
     init_printing()
     if a == "" or b == "":
         out = integrate(term, x)
