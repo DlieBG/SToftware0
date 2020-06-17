@@ -5,7 +5,7 @@ from os import walk
 from functions import *
 
 def main():
-    print("\n\nBitte gib eine Aufgabe ein! (Bsp.: 1. Ableitung von x**2)")
+    print("\n\nBitte gib eine Query ein:")
     keyinput = input()
     keyinput = keyinput.lower()
     keyinput = keyinput.replace("^", "**")
