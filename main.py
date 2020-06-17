@@ -12,8 +12,9 @@ def main():
     keyinput = keyinput.replace("f(x)=", "")
     keyinput = keyinput.replace("y=", "")
     try:
-        getattr(globals().get("test"), "hook")("asd")
-        
+        for function in os.listdir("functions"):
+            if function[0] is not '_': 
+                getattr(globals().get(function[:-3]), "hook")("asd")
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
