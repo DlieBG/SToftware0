@@ -12,7 +12,8 @@ def main():
     keyinput = keyinput.replace("f(x)=", "")
     keyinput = keyinput.replace("y=", "")
     try:
-        test.hook(keyinput)
+        getattr(globals().get("test"), "hook")("asd")
+        
     except:
         print("Entweder DU bist schuld oder das Programm ist schuld")
     finally:
