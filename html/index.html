@@ -1,0 +1,21 @@
+<html>
+    <form id="form" method="POST" action="https://benedikt-schwering.de/SToftware0/html/mobile/call.php" autocomplete="off" target="iframe">
+        <!--<input value="" id="input" type="text" autocomplete="false" name="ST0q">-->
+        <input id="input" class="materialize-textarea" name="ST0q" rows="1"></input>
+        <label class="active" for="input">Eingabe</label>
+    </form>
+
+    <iframe name="iframe" style="width:100%; height:calc(100vh - 186px); border: none;"></iframe>
+
+    <script>
+        document.getElementById("input").oninput = function()
+        {
+            document.getElementById("input").value = document.getElementById("input").value.replace("ä", "ae");
+            document.getElementById("input").value = document.getElementById("input").value.replace("ü", "ue");
+            document.getElementById("input").value = document.getElementById("input").value.replace("ö", "oe");
+            document.getElementById("input").value = document.getElementById("input").value.replace("Ä", "Ae");
+            document.getElementById("input").value = document.getElementById("input").value.replace("Ü", "Ue");
+            document.getElementById("input").value = document.getElementById("input").value.replace("Ö", "Oe");
+        }
+    </script>
+</html>
